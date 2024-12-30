@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MissionDetails } from '../../model/missions/mission-details';
 
 @Component({
   selector: 'app-missions',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './missions.component.css'
 })
 export class MissionsComponent {
-
+  @Input({
+      required: true
+    })
+    mission: MissionDetails | null = null;
 }

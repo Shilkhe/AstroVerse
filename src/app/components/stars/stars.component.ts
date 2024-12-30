@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { StarDetails } from '../../model/stars/star-details';
 
 @Component({
   selector: 'app-stars',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './stars.component.css'
 })
 export class StarsComponent {
-
+   @Input({
+        required: true
+      })
+      star: StarDetails | null = null;
 }

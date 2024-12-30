@@ -1,0 +1,9 @@
+@if(missionDetails){
+    <div id="missionCard">
+        @for(mission of missionDetails; track $index){
+            <app-missions [mission]="mission"></app-missions>
+        }     
+    </div>
+}
+
+

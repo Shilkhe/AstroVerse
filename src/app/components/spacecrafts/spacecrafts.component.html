@@ -1,1 +1,12 @@
-<p>spacecrafts works!</p>
+@if(spacecraft){
+    <article>
+        <div id="spacecraft">
+            <p>Name: {{spacecraft.name}}</p>
+            <p>Type: {{spacecraft.type}}</p>
+            <p>Manufacturer: {{spacecraft.manufacturer}}</p>
+            <p>Launch Vehicle: {{spacecraft.launchVehicle}}</p>
+            <p>MissionId: {{spacecraft.missionId}}</p>
+            <p>Description: {{spacecraft.description}}</p>
+        </div>
+    </article>
+}

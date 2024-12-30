@@ -1,1 +1,13 @@
-<p>missions works!</p>
+@if(mission){
+    <article>
+        <div id="mission">
+            <p>Name: {{mission.name}}</p>
+            <p>Launch Date: {{mission.launchDate}}</p>
+            <p>End Date: {{mission.endDate}}</p>
+            <p>Target: {{mission.target}}</p>
+            <p>Status: {{mission.status}}</p>
+            <p>Description: {{mission.description}}</p>
+        </div>
+    </article>
+}
+

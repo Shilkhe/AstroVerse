@@ -1,0 +1,9 @@
+@if(starDetails){
+    <div id="starCard">
+        @for(star of starDetails; track $index){
+            <app-stars [star]="star"></app-stars>
+        }     
+    </div>
+}
+
+

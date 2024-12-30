@@ -2,18 +2,16 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { HttpConfig } from "../../config/http-config";
-import { FactDetails } from "./fact-details";
-
-
+import { StarDetails } from "./star-details";
 
 @Injectable({
     providedIn: 'root'
 })
-export class FactService{
-    private urlExtension: string = "api/facts";
+export class StarService{
+    private urlExtension: string = "api/stars";
     constructor(private http: HttpClient){}
 
-    getFactDetails(): Observable<FactDetails[]> {
-        return this.http.get<FactDetails[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
+    getStarDetails(): Observable<StarDetails[]> {
+        return this.http.get<StarDetails[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
     }
 }

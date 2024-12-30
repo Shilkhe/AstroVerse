@@ -1,0 +1,10 @@
+@if(factDetails){
+    <div id="factCard">
+        @for(fact of factDetails; track $index){
+            <app-facts [fact]="fact"></app-facts>
+        }     
+    </div>
+}
+
+
+

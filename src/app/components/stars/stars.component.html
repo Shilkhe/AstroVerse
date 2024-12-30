@@ -1,1 +1,16 @@
-<p>stars works!</p>
+@if(star){
+    <article>
+        <div id="star">
+            <p>Name: {{star.name}}</p>
+            <p>Mass: {{star.mass}}</p>
+            <p>Radius: {{star.radius}}</p>
+            <p>Spectral Type: {{star.spectralType}}</p>
+            <p>Luminosity: {{star.luminosity}}</p>
+            <p>Temperature: {{star.temperature}}</p>
+            <p>Discovery Date: {{star.discoveryDate}}</p>
+            <p>Discovered By: {{star.discoveredBy}}</p>
+            <p>Description: {{star.description}}</p>
+        </div>
+    </article>
+}
+

@@ -1,0 +1,8 @@
+@if(spacecraftDetails){
+    <div id="spacecraftCard">
+        @for(spacecraft of spacecraftDetails; track $index){
+            <app-spacecrafts [spacecraft]="spacecraft"></app-spacecrafts>
+        }     
+    </div>
+}
+

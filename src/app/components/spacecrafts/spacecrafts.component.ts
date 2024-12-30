@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { SpacecraftDetails } from '../../model/spacecrafts/spacecraft-details';
 
 @Component({
   selector: 'app-spacecrafts',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './spacecrafts.component.css'
 })
 export class SpacecraftsComponent {
+   @Input({
+      required: true
+    })
+    spacecraft: SpacecraftDetails | null = null;
+  }
 
-}
