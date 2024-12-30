@@ -1,0 +1,7 @@
+@if(planetDetail){
+    <div id="planetCard">
+        @for(planet of planetDetail; track $index){
+            <app-planets [planet]="planet"></app-planets>
+        }     
+    </div>
+}

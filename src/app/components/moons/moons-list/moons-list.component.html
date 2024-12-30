@@ -1,0 +1,8 @@
+@if(moonDetail){
+    <div id="moonCard">
+        @for(moon of moonDetail; track $index){
+            <app-moons [moon]="moon"></app-moons>
+        }     
+    </div>
+}
+

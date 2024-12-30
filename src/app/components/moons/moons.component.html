@@ -1,1 +1,16 @@
-<p>moons works!</p>
+@if(moon){
+    <article>
+        <div id="moon">
+            <p>Name: {{moon.name}}</p>
+            <p>Mass: {{moon.mass}}</p>
+            <p>Radius: {{moon.radius}}</p>
+            <p>Planet Distance: {{moon.planetDistance}}</p>
+            <p>Orbital Period: {{moon.orbitalPeriod}}</p>
+            <p>Discovery Date: {{moon.discoveryDate}}</p>
+            <p>Discovered By: {{moon.discoveredBy}}</p>
+            <p>Atmosphere: {{moon.atmosphere}}</p>
+            <p>Planet Id: {{moon.planetId}}</p>
+            <p>Description: {{moon.description}}</p>
+        </div>
+    </article>
+}

@@ -1,4 +1,4 @@
-export interface PlanetDetails{
+export interface FactDetails{
     name: string;
     mass: number;
     radius: number;
@@ -8,7 +8,6 @@ export interface PlanetDetails{
     discoveredBy: string;
     atmosphere: string;
     hasRingSystem: boolean;
+    starId: number;
     description: string;
 }
-
-//qui manca id della stella in caso si volesse mettere.

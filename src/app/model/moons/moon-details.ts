@@ -1,14 +1,13 @@
-export interface PlanetDetails{
+export interface MoonDetails{
     name: string;
     mass: number;
     radius: number;
-    starDistance: number;
+    planetDistance: number;
     orbitalPeriod: number;
     discoveryDate: string;
     discoveredBy: string;
     atmosphere: string;
-    hasRingSystem: boolean;
+    planetId: number;
     description: string;
 }
 
-//qui manca id della stella in caso si volesse mettere.
