@@ -21,11 +21,21 @@ export class RandomfactComponent implements OnInit{
 
   constructor(private factService: FactService){}
 
-  ngOnInit(): void {
+  /*ngOnInit(): void {
     let opd: Observable<FactDetails> = this.factService.getRandomFact();
       opd.subscribe({
       next: sts => this.factDetail = sts,
       error: err => console.log(err)
     });
+  }*/
+ ngOnInit(): void {
+    if (this.fact) {
+      this.factDetail = this.fact;  // Puoi assegnare direttamente o chiamare getRandomFact()
+    } else {
+      this.factService.getRandomFact().subscribe({
+        next: sts => this.factDetail = sts,
+        error: err => console.log(err)
+      });
+    }
   }
 }

@@ -1,7 +1,3 @@
-<div *ngIf="factDetail">
-    <article *ngIf="fact">
-        <div id="fact">
-            <p>{{ fact.text }}</p>
-        </div>
-    </article>
+<div id="randomFact" *ngIf="factDetail">
+    <h3>{{ factDetail.text }}</h3>
 </div>
