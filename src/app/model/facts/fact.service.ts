@@ -16,4 +16,7 @@ export class FactService{
     getFactDetails(): Observable<FactDetails[]> {
         return this.http.get<FactDetails[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
     }
+    getRandomFact(): Observable<FactDetails>{
+        return this.http.get<FactDetails>(`${HttpConfig.apiUrl}${this.urlExtension}/random`);
+    }
 }

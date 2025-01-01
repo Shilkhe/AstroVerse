@@ -7,6 +7,7 @@ import { FactsListComponent } from './components/facts/facts-list/facts-list.com
 import { MissionsListComponent } from './components/missions/missions-list/missions-list.component';
 import { StarsListComponent } from './components/stars/stars-list/stars-list.component';
 import { MembersComponent } from './components/members/members.component';
+import { RandomfactComponent } from './components/randomfact/randomfact.component';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
@@ -16,5 +17,6 @@ export const routes: Routes = [
     {path: 'spacecrafts', component:SpacecraftsListComponent},
     {path: 'missions', component:MissionsListComponent},
     {path: 'facts', component:FactsListComponent},
-    {path: 'members', component:MembersComponent}
+    {path: 'members', component:MembersComponent},
+    {path: 'randomFact', component:RandomfactComponent}
 ];

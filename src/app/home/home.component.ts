@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,5 +8,5 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  
 }
