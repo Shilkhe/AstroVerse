@@ -1,0 +1,60 @@
+/* Stile generale per il body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Altezza completa della finestra del browser */
+}
+
+/* Contenitore principale */
+#divPrincipale {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 90%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+/* Card individuale per immagine e testo */
+div > * {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  text-align: center;
+}
+
+/* Stile per le immagini */
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Stile per i titoli */
+h1 {
+  font-size: 1.5rem;
+  margin: 10px 0 5px;
+  color: #0078D7;
+}
+
+h4 {
+  font-size: 1rem;
+  margin: 0 0 10px;
+  color: #555;
+}
