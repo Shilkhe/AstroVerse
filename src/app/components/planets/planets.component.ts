@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { PlanetDetails } from '../../model/planets/planet-details';
 import { RouterModule } from '@angular/router';
 
@@ -6,7 +6,8 @@ import { RouterModule } from '@angular/router';
   selector: 'app-planets',
   imports: [RouterModule],
   templateUrl: './planets.component.html',
-  styleUrl: './planets.component.css'
+  styleUrl: './planets.component.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class PlanetsComponent {
   @Input({

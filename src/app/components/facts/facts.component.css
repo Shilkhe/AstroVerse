@@ -1,0 +1,152 @@
+/* Corpo generale della pagina */
+body {
+    background: radial-gradient(circle at center, #000428, #004e92); /* Sfondo spaziale */
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif; /* Font futuristico */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altezza minima per coprire tutta la finestra */
+}
+
+/* Effetto di sfondo animato */
+body::before {
+    content: '';
+    position: fixed; /* Lo sfondo resta fisso durante lo scorrimento */
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    background-size: cover;
+    opacity: 0.2; /* Effetto semi-trasparente */
+    animation: move-bg 20s linear infinite; /* Animazione */
+    z-index: -1;
+}
+
+@keyframes move-bg {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(50%, 50%);
+    }
+}
+
+/* Contenitore dei facts */
+#fact {
+    position: relative;
+    background: rgba(0, 0, 0, 0.7); /* Fondo semi-trasparente per dare contrasto */
+    padding: 20px;
+    border-radius: 15px;
+    width: 350px;
+    min-height: 200px;
+    max-height: 400px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Effetto di luce */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    backdrop-filter: blur(5px); /* Effetto vetro smerigliato */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Effetto hover per il box dei facts */
+#fact:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+}
+
+/* Animazione per gli effetti del razzo */
+@keyframes rocket {
+    0% {
+        top: 50%;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+#fact::before {
+    content: "🚀"; /* Aggiunge il razzo */
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    animation: rocket 2s ease-in-out infinite; /* Razzo che decolla */
+}
+
+#fact::after {
+    content: "?"; /* Punto di domanda che esplode */
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    font-size: 60px;
+    color: #ffcc00;
+    animation: explosion 1.5s ease-in-out infinite alternate; /* Animazione per effetto esplosione */
+}
+
+/* Animazione esplosiva per il punto di domanda */
+@keyframes explosion {
+    0% {
+        transform: translateX(-50%) rotate(45deg) scale(1);
+    }
+    100% {
+        transform: translateX(-50%) rotate(45deg) scale(1.2);
+        color: #ff4444;
+    }
+}
+
+/* Testo del fatto */
+#fact p {
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+    z-index: 10;
+}
+
+/* Styling per meteoriti che cadono */
+@keyframes meteor {
+    0% {
+        top: -50px;
+        left: 10%;
+        opacity: 0;
+    }
+    100% {
+        top: 100%;
+        left: 90%;
+        opacity: 1;
+    }
+}
+
+/* Meteoriti che passano sopra il testo */
+#fact::before {
+    content: "🚀";
+    position: absolute;
+    top: -50px;
+    left: 10%;
+    font-size: 40px;
+    animation: meteor 4s linear infinite;
+}
+
+#fact::after {
+    content: "🚀";
+    position: absolute;
+    top: -50px;
+    left: 40%;
+    font-size: 40px;
+    animation: meteor 4s linear infinite reverse;
+}
+
+/* Add effect for small explosions on hover */
+#fact:hover::before, #fact:hover::after {
+    animation: none;
+    content: "💥"; /* Esplosione al passaggio del mouse */
+    font-size: 40px;
+    animation: explosion 0.3s ease;
+}

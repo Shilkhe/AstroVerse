@@ -1,0 +1,90 @@
+/* Corpo generale della pagina */
+body {
+    background: radial-gradient(circle at center, #000428, #004e92); /* Sfondo spaziale */
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif; /* Font futuristico */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altezza minima per coprire tutta la finestra */
+}
+
+/* Effetto di sfondo animato */
+body::before {
+    content: '';
+    position: fixed; /* Lo sfondo resta fisso durante lo scorrimento */
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    background-size: cover;
+    opacity: 0.2; /* Effetto semi-trasparente */
+    animation: move-bg 20s linear infinite; /* Animazione */
+    z-index: -1;
+}
+
+@keyframes move-bg {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(50%, 50%);
+    }
+}
+
+/* Contenitore delle card */
+#planet {
+    background: rgba(255, 255, 255, 0.1); /* Sfondo semi-trasparente */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Bordo traslucido */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Effetto glow */
+    padding: 20px;
+    width: 350px; /* Larghezza standard per tutte le card */
+    height: 500px; /* Altezza standard per tutte le card */
+    overflow: hidden; /* Impedisce l'overflow del contenuto */
+    text-align: left; /* Allineamento a sinistra per dati tabulari */
+    backdrop-filter: blur(5px); /* Effetto vetro smerigliato */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spaziatura tra i campi */
+    margin: 20px; /* Spaziatura tra le card */
+}
+
+/* Lista di definizioni */
+dl {
+    margin: 0;
+    padding: 0;
+}
+
+dt {
+    font-weight: bold;
+    color: #00d4ff; /* Colore ciano brillante */
+    margin-top: 10px;
+}
+
+dd {
+    margin: 0 0 10px 15px; /* Margine per separare i dati */
+    color: #ffffff;
+}
+
+dd span {
+    font-weight: bold;
+    color: #ffcc00; /* Colore giallo brillante per risalto */
+}
+
+/* Layout per più card */
+.planet-container {
+    display: flex;
+    flex-wrap: wrap; /* Disposizione automatica su più righe */
+    justify-content: center; /* Centra le card */
+    gap: 20px; /* Spaziatura tra le card */
+    padding: 20px; /* Spaziatura interna per il contenitore */
+}
+
+/* Aggiunto per garantire lo scorrimento */
+html, body {
+    overflow: auto; /* Consente lo scorrimento */
+}
+

@@ -1,5 +1,5 @@
 @if(planet){
-    <article>
+    <!-- <article>
         <div id="planet">
             <p>Name: {{planet.name}}</p>
             <p>Mass: {{planet.mass}}</p>
@@ -12,5 +12,36 @@
             <p>Ring System: {{planet.hasRingSystem}}</p>
             <p>Description: {{planet.description}}</p>
         </div>
-    </article>
+    </article> -->
+    <div class="planet-container">
+        <article class="planet-info">
+            <div id="planet" aria-label="Planet Information">
+                <dl>
+                    <dt>Name:</dt>
+                    <dd><span>{{planet.name || "Unknown"}}</span></dd>
+                    <dt>Mass:</dt>
+                    <dd><span>{{planet.mass || "Not available"}}</span></dd>
+                    <dt>Radius:</dt>
+                    <dd><span>{{planet.radius || "Not available"}}</span></dd>
+                    <dt>Star Distance:</dt>
+                    <dd><span>{{planet.starDistance || "Not available"}}</span></dd>
+                    <dt>Orbital Period:</dt>
+                    <dd><span>{{planet.orbitalPeriod || "Not available"}}</span></dd>
+                    <dt>Discovery Date:</dt>
+                    <dd><span>{{planet.discoveryDate || "Not available"}}</span></dd>
+                    <dt>Discovered By:</dt>
+                    <dd><span>{{planet.discoveredBy || "Unknown"}}</span></dd>
+                    <dt>Atmosphere:</dt>
+                    <dd><span>{{planet.atmosphere || "Not available"}}</span></dd>
+                    <dt>Ring System:</dt>
+                    <dd><span>{{planet.hasRingSystem || "No"}}</span></dd>
+                    <dt>Description:</dt>
+                    <dd><span>{{planet.description || "No description available"}}</span></dd>
+                </dl>
+            </div>
+        </article>
+        <!-- Ripeti per ogni pianeta -->
+    </div>
+    
+    
 }
