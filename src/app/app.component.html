@@ -1,14 +1,35 @@
-<div>
-  <h1>
-      <a routerLink="/">{{title}}</a>
+<nav class="navbar">
+  <h1 class="title">
+    <a routerLink="/" class="wiki-button">
+      <img src="assets/Astroverse.png" alt="Title Image" class="title-image">
+    </a>
   </h1>
-  <nav class="container">
+  <h3 class="view">
+    <a routerLink="/">View</a>
+  </h3>
+  <h3 class="facts">
+    <a routerLink="/facts">Facts</a>
+  </h3>
+  <h3 class="quiz">
+    <a routerLink="/quiz">Quiz</a>
+  </h3>
+  <h3 class="aboutus">
+    <a routerLink="/members">About us</a>
+  </h3>
+  <div _ngcontent-ng-c2420471674="" class="input-container"><input _ngcontent-ng-c2420471674="" type="text" name="text"
+      placeholder="search..." class="input ng-valid ng-dirty ng-touched">
+  </div>
+</nav>
+  
+
+<!-- <div>
+  <div class="container">
     <h2><a routerLink="/planets">Planets</a></h2>
     <h2><a routerLink="/moons">Moons</a></h2>
     <h2><a routerLink="/stars">Stars</a></h2>
     <h2><a routerLink="/missions">Missions</a></h2>
     <h2><a routerLink="/spacecrafts">Spacecrafts</a></h2>
     <h2><a routerLink="/facts">Facts</a></h2>
-  </nav>
-</div>
+  </div>
+</div> -->
 <router-outlet></router-outlet>
