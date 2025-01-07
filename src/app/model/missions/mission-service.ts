@@ -12,7 +12,10 @@ export class MissionService{
     private urlExtension: string = "api/missions";
     constructor(private http: HttpClient){}
 
-    getMissionDetails(): Observable<MissionDetails[]> {
-        return this.http.get<MissionDetails[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
+    // getMissionDetails(): Observable<MissionDetails[]> {
+    //     return this.http.get<MissionDetails[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
+    // }
+    getMissionDetails(page: number, size: number): Observable<any> {
+        return this.http.get<any>(`${HttpConfig.apiUrl}${this.urlExtension}?page=${page}&size=${size}`);
     }
 }
