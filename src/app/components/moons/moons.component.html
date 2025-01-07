@@ -1,16 +1,30 @@
 @if(moon){
-    <article>
-        <div id="moon">
-            <p>Name: {{moon.name}}</p>
-            <p>Mass: {{moon.mass}}</p>
-            <p>Radius: {{moon.radius}}</p>
-            <p>Planet Distance: {{moon.planetDistance}}</p>
-            <p>Orbital Period: {{moon.orbitalPeriod}}</p>
-            <p>Discovery Date: {{moon.discoveryDate}}</p>
-            <p>Discovered By: {{moon.discoveredBy}}</p>
-            <p>Atmosphere: {{moon.atmosphere}}</p>
-            <p>Planet Id: {{moon.planetId}}</p>
-            <p>Description: {{moon.description}}</p>
-        </div>
-    </article>
+    <div class="moon-container">
+        <article class="moon-info">
+            <div id="moon" aria-label="Moon Information">
+                <dl>
+                    <dt>Name:</dt>
+                    <dd><span>{{moon.name || "Not available"}}</span></dd>
+                    <dt>Mass:</dt>
+                    <dd><span>{{moon.mass || "Not available"}}</span></dd>
+                    <dt>Radius:</dt>
+                    <dd><span>{{moon.radius || "Unknown"}}</span></dd>
+                    <dt>Planet Distance:</dt>
+                    <dd><span>{{moon.planetDistance || "Not available"}}</span></dd>
+                    <dt>Orbital Period:</dt>
+                    <dd><span>{{moon.orbitalPeriod || "Unavailable"}}</span></dd>
+                    <dt>Discovery Date:</dt>
+                    <dd><span>{{moon.discoveryDate || "No description available"}}</span></dd>
+                    <dt>Discovered By:</dt>
+                    <dd><span>{{moon.discoveredBy || "Not available"}}</span></dd>
+                    <dt>Atmosphere:</dt>
+                    <dd><span>{{moon.atmosphere || "Unavailable"}}</span></dd>
+                    <dt>Planet:</dt>
+                    <dd><span>{{moon.planetId || "No description available"}}</span></dd>
+                    <dt>Description:</dt>
+                    <dd><span>{{moon.description || "No description available"}}</span></dd>
+                </dl>
+            </div>
+        </article>
+    </div> 
 }

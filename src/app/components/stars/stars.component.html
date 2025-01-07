@@ -1,16 +1,29 @@
 @if(star){
-    <article>
-        <div id="star">
-            <p>Name: {{star.name}}</p>
-            <p>Mass: {{star.mass}}</p>
-            <p>Radius: {{star.radius}}</p>
-            <p>Spectral Type: {{star.spectralType}}</p>
-            <p>Luminosity: {{star.luminosity}}</p>
-            <p>Temperature: {{star.temperature}}</p>
-            <p>Discovery Date: {{star.discoveryDate}}</p>
-            <p>Discovered By: {{star.discoveredBy}}</p>
-            <p>Description: {{star.description}}</p>
-        </div>
-    </article>
+    <div class="star-container">
+        <article class="star-info">
+            <div id="star" aria-label="Star Information">
+                <dl>
+                    <dt>Name:</dt>
+                    <dd><span>{{star.name || "Unknown"}}</span></dd>
+                    <dt>Mass:</dt>
+                    <dd><span>{{star.mass || "Not available"}}</span></dd>
+                    <dt>Radius:</dt>
+                    <dd><span>{{star.radius || "Not available"}}</span></dd>
+                    <dt>Spectral Type:</dt>
+                    <dd><span>{{star.spectralType || "Not available"}}</span></dd>
+                    <dt>Luminosity:</dt>
+                    <dd><span>{{star.luminosity || "Not available"}}</span></dd>
+                    <dt>Temperature:</dt>
+                    <dd><span>{{star.temperature || "Not available"}}</span></dd>
+                    <dt>Discovery Date:</dt>
+                    <dd><span>{{star.discoveryDate || "Not available"}}</span></dd>
+                    <dt>Discovered By:</dt>
+                    <dd><span>{{star.discoveredBy || "Not available"}}</span></dd>
+                    <dt>Description:</dt>
+                    <dd><span>{{star.description || "Not available"}}</span></dd>
+                </dl>
+            </div>
+        </article>
+    </div>  
 }
 
