@@ -11,7 +11,7 @@
 
 
  -->
- @if (factDetails) {
+ <!-- @if (factDetails) {
     <div id="factCard">
         @for (fact of factDetails; track fact) {
             <app-facts [fact]="fact"></app-facts>
@@ -21,8 +21,37 @@
     <p>Nessun dato disponibile.</p>
 }
 
-<!-- Paginazione -->
+
 <button (click)="prevPage()" [disabled]="page === 0">Pagina Precedente</button>
 <span> Pagina {{ page + 1 }} di {{ totalPages }} </span>
-<button (click)="nextPage()" [disabled]="page >= totalPages - 1">Pagina Successiva</button>
+<button (click)="nextPage()" [disabled]="page >= totalPages - 1">Pagina Successiva</button> -->
+
+<div>
+    <!-- Categoria di filtro -->
+    <label for="category-select">Filtra per categoria:</label>
+    <select id="category-select" (change)="onCategoryChange($event)">
+        <option value="">Tutte</option>
+        <option *ngFor="let category of categories" [value]="category">
+            {{ category }}
+        </option>
+    </select>
+</div>
+
+<!-- Contenuto -->
+@if (filteredFacts && filteredFacts.length > 0) {
+    <div id="factCard">
+        <div *ngFor="let fact of filteredFacts; trackBy: trackById">
+            <app-facts [fact]="fact"></app-facts>
+        </div>
+    </div>
+} @else {
+    <p>Nessun dato disponibile.</p>
+}
+
+<!-- Paginazione -->
+<div class="pagination-controls">
+    <button (click)="prevPage()" [disabled]="page === 0">Pagina Precedente</button>
+    <span> Pagina {{ page + 1 }} di {{ totalPages }} </span>
+    <button (click)="nextPage()" [disabled]="page >= totalPages - 1">Pagina Successiva</button>
+</div>
 
