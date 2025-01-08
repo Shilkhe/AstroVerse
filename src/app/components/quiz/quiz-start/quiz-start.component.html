@@ -1,1 +1,41 @@
-<p>quiz-start works!</p>
+<div class="quiz-container">
+    <h1>Quiz</h1>
+    <h2>Domanda {{ currentQuestionIndex + 1 }} di {{ quizDetails.length }}</h2>
+  
+    
+    <div *ngIf="currentQuestion">
+      <p class="question">{{ currentQuestion?.question }}</p>
+    </div>
+  
+    <div class="answers">
+      <div
+        class="answer-card"
+        *ngFor="let answer of [
+          currentQuestion?.answerOne,
+          currentQuestion?.answerTwo,
+          currentQuestion?.answerThree,
+          currentQuestion?.answerFour
+        ]"
+        [ngClass]="{
+          'correct-answer': userAnswer === currentQuestion?.correctAnswer && userAnswer === answer,
+          'wrong-answer': userAnswer !== currentQuestion?.correctAnswer && userAnswer === answer,
+          'highlight-correct': userAnswer !== currentQuestion?.correctAnswer && currentQuestion?.correctAnswer === answer
+        }"
+        (click)="!userAnswer && answer ? submitAnswer(answer) : null"
+      >
+        {{ answer }}
+      </div>
+    </div>
+  
+    <button
+      *ngIf="userAnswer && !quizCompleted"
+      class="next-btn"
+      (click)="nextQuestion()"
+    >
+      Next Question
+    </button>
+  
+    <p *ngIf="quizCompleted">Quiz completato! Stai per essere reindirizzato...</p>
+  </div>
+  
+  

@@ -26,7 +26,11 @@ export class QuizComponent implements OnInit {
       .subscribe(
         (data: QuizDetails[]) => {  // 'data' è un array di QuizDetails
           this.quizDetails = data;  // Assegniamo l'array di domande
-          this.router.navigate(['/quiz-start'], { state: { quizDetails: this.quizDetails } });
+          console.log(data);
+          console.log('QuizDetails:', this.quizDetails);
+          this.router.navigate(['/quiz-start'], { state: { quizDetails: this.quizDetails } })
+          .then(() => console.log('Navigazione completata con successo'))
+          .catch((error) => console.error('Errore nella navigazione:', error));
         },
         (error) => {
           console.error('Errore nel recupero delle domande:', error);
