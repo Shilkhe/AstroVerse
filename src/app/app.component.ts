@@ -16,5 +16,3 @@ export class AppComponent {
     this.activeLink = link;
   }
 }
-
-

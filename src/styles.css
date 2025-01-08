@@ -1,5 +1,13 @@
-body{
+@font-face {
+    font-family: Erode;
+    src: url(../fonts/Erode-Variable.ttf);
+}
+@font-face {
+    font-family: Erode-italics;
+    src: url(../fonts/Erode-VariableItalic.ttf);
+}
+html{
+    font-family: Erode;
     background-color:#0a0813;
-    font-family: 'Orbitron', sans-serif;
-
+    margin-top: 115px;
 }
