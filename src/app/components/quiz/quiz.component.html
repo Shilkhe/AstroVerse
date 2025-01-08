@@ -1,6 +1,23 @@
 <div>
-<button>Easy</button>
-<button>Medium</button>
-<button>Hard</button>
-<button>Astronaut</button>
+    <label for="difficulty">Select your difficulty</label>
+    <select id="difficulty" [(ngModel)]="difficulty">
+        <option value="easy">Easy</option>
+        <option value="medium">Normal</option>
+        <option value="hard">Hard</option>
+        <option value="astronaut">Astronaut</option>
+    </select>
+</div>
+
+<div>
+    <label for="numberOfQuestions">Select the number of questions</label>
+    <select id="numberOfQuestions" [(ngModel)]="numberOfQuestions">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+    </select>
+</div>
+
+<div>
+    <button (click)="getQuiz()">LET'S GO!</button>
 </div>
