@@ -1,9 +1,24 @@
-@if(missionDetails){
+<!-- @if(missionDetails){
     <div id="missionCard">
         @for(mission of missionDetails; track $index){
             <app-missions [mission]="mission"></app-missions>
         }     
     </div>
+} -->
+@if (missionDetails) {
+    <div id="factCard">
+        @for (mission of missionDetails; track mission) {
+            <app-missions [mission]="mission"></app-missions>
+        }
+    </div>
+} @else {
+    <p>Nessun dato disponibile.</p>
 }
+
+<!-- Paginazione -->
+<button (click)="prevPage()" [disabled]="page === 0">Pagina Precedente</button>
+<span> Pagina {{ page + 1 }} di {{ totalPages }} </span>
+<button (click)="nextPage()" [disabled]="page >= totalPages - 1">Pagina Successiva</button>
+
 
 

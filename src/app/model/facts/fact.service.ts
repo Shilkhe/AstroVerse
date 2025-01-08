@@ -13,10 +13,15 @@ export class FactService{
     private urlExtension: string = "api/facts";
     constructor(private http: HttpClient){}
 
-    getFactDetails(): Observable<FactDetails[]> {
-        return this.http.get<FactDetails[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
-    }
+   // getFactDetails(): Observable<FactDetails[]> {
+   //     return this.http.get<FactDetails[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
+    //}
     getRandomFact(): Observable<FactDetails>{
         return this.http.get<FactDetails>(`${HttpConfig.apiUrl}${this.urlExtension}/random`);
     }
+    getFactDetails(page: number, size: number): Observable<any> {
+        return this.http.get<any>(`${HttpConfig.apiUrl}${this.urlExtension}?page=${page}&size=${size}`);
+    }
+    
+    
 }
