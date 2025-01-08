@@ -26,7 +26,8 @@ export class QuizComponent implements OnInit {
       .subscribe(
         (data: QuizDetails[]) => {  // 'data' è un array di QuizDetails
           this.quizDetails = data;  // Assegniamo l'array di domande
-          console.log(data);
+          //console.log(data);
+          console.log(this.quizDetails);
           console.log('QuizDetails:', this.quizDetails);
           this.router.navigate(['/quiz-start'], { state: { quizDetails: this.quizDetails } })
           .then(() => console.log('Navigazione completata con successo'))

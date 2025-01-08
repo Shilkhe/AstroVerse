@@ -10,6 +10,8 @@ import { MembersComponent } from './components/members/members.component';
 import { RandomfactComponent } from './components/randomfact/randomfact.component';
 import { QuizComponent } from './components/quiz/quiz.component';
 import { QuizStartComponent } from './components/quiz/quiz-start/quiz-start.component';
+import { QuizEndComponent } from './components/quiz/quiz-end/quiz-end.component';
+import { Component } from '@angular/core';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
@@ -22,5 +24,6 @@ export const routes: Routes = [
     {path: 'members', component:MembersComponent},
     {path: 'randomFact', component:RandomfactComponent},
     {path: 'quiz', component:QuizComponent},
-    {path: 'quiz-start', component: QuizStartComponent}
+    {path: 'quiz-start', component: QuizStartComponent},
+    {path: 'quiz-end', component: QuizEndComponent}
 ];
