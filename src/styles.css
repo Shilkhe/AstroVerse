@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Erode;
+    src: url(../fonts/Erode-Variable.ttf);
+}
+@font-face {
+    font-family: Erode-italics;
+    src: url(../fonts/Erode-VariableItalic.ttf);
+}
+html{
+    font-family: Erode;
+    background-color:#0a0813;
+    margin-top: 115px;
+}

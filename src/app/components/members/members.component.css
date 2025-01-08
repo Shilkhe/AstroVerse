@@ -1,7 +1,5 @@
 /* Stile generale per il body */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
   color: #333;
   margin: 0;
   padding: 0;
@@ -18,7 +16,6 @@ body {
   gap: 20px;
   width: 90%;
   padding: 20px;
-  background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin: 0 auto;

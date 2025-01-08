@@ -5,8 +5,14 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: [RouterOutlet, RouterModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'AstroVerse';
+  activeLink: string = ''; // Variable to hold the active link
+
+  // Method to set the active link
+  setActiveLink(link: string): void {
+    this.activeLink = link;
+  }
 }
