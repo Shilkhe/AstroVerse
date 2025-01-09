@@ -1,1 +1,18 @@
-<p>quiz-end works!</p>
+<div class="quiz-end-container">
+  <p>THANKS FOR TRYING THE QUIZ MODE, PLEASE CHOOSE TO RESTART OR GO BACK HOME</p>
+  <div class="result-section">
+    <h2>Your Result</h2>
+    <div class="score">{{corectAnswer}} / {{totalQuestion}}</div>
+    <div class="final-message">{{endText}}</div>
+  </div>
+  
+  <div class="button-section">
+    <button (click)="restart()">RESTART</button>
+    <button (click)="goHome()">HOME</button>
+  </div>
+</div>
+
+  
+  
+  
+  
