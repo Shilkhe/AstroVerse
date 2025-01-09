@@ -9,7 +9,7 @@
  @if (spacecraftDetails) {
     <div id="factCard">
         @for (spacecraft of spacecraftDetails; track spacecraft) {
-            <app-spacecrafts [spacecraft]="spacecraft"></app-spacecrafts>
+            <app-spacecrafts [spacecraft]="spacecraft" (click)="getSpacecrafts(spacecraft.id)"></app-spacecrafts>
         }
     </div>
 } @else {

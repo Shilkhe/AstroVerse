@@ -8,7 +8,7 @@
 @if (moonDetails) {
     <div id="factCard">
         @for (moon of moonDetails; track moon) {
-            <app-moons [moon]="moon"></app-moons>
+            <app-moons [moon]="moon" (click)="getMoon(moon.id)"></app-moons>
         }
     </div>
 } @else {

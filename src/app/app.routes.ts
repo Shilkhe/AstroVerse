@@ -32,8 +32,8 @@ export const routes: Routes = [
     {path: 'quiz-start', component:QuizStartComponent},
     {path: 'quiz-end', component:QuizEndComponent},
     {path: 'planets-page/:id', component:PlanetPageComponent},
-    {path: 'moons/:id', component:MoonsPageComponent},
-    {path: 'stars/:id', component:StarsPageComponent},
-    {path: 'missions/:id', component: MissionsPageComponent}, 
-    {path: 'spacecrafts/:id', component: SpacecraftsPageComponent}
+    {path: 'moons-page/:id', component:MoonsPageComponent},
+    {path: 'stars-page/:id', component:StarsPageComponent},
+    {path: 'missions-page/:id', component: MissionsPageComponent}, 
+    {path: 'spacecrafts-page/:id', component: SpacecraftsPageComponent}
 ];

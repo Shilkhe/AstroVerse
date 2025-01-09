@@ -3,6 +3,7 @@ import { MoonDetails } from '../../../model/moons/moon-details';
 import { MoonService } from '../../../model/moons/moon-service';
 import { Observable } from 'rxjs';
 import { MoonsComponent } from "../moons.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-moons-list',
@@ -27,7 +28,7 @@ export class MoonsListComponent implements OnInit{
   readonly size: number = 6;
   totalPages: number = 0;
 
-  constructor(private moonService: MoonService) {}
+  constructor(private moonService: MoonService, private router: Router) {}
 
   ngOnInit(): void {
       this.loadMoons();
@@ -70,5 +71,8 @@ export class MoonsListComponent implements OnInit{
   isLastPage(): boolean {
       return this.page >= this.totalPages - 1;
   }
+  getMoon(id: number): void {
+    this.router.navigate([`/moons-page/${id}`]);
+   };
 }
 

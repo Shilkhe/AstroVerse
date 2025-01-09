@@ -1,4 +1,5 @@
 export interface StarDetails{
+    id: number;
     name: string;
     mass: number;
     radius: number;

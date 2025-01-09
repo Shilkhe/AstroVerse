@@ -8,7 +8,7 @@
 @if (missionDetails) {
     <div id="factCard">
         @for (mission of missionDetails; track mission) {
-            <app-missions [mission]="mission"></app-missions>
+            <app-missions [mission]="mission" (click)="getMission(mission.id)"></app-missions>
         }
     </div>
 } @else {

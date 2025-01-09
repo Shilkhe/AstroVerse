@@ -19,7 +19,7 @@ export class MissionsPageComponent implements OnInit{
     constructor(
       private route: ActivatedRoute,
       private missionService: MissionService,
-      private sanitizer: DomSanitizer
+      private sanitizer: DomSanitizer,
     ) {}
   
     ngOnInit(): void {

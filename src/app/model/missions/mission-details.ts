@@ -1,4 +1,5 @@
 export interface MissionDetails{
+    id: number;
     name: string;
     launchDate: string;
     endDate: string;
