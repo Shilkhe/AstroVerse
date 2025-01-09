@@ -70,6 +70,7 @@ h3{
 }
 
 body {
+    color: white;
     background-color: #f4f4f9;
     display: flex;
     justify-content: center;

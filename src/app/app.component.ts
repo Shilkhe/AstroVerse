@@ -15,4 +15,9 @@ export class AppComponent {
   setActiveLink(link: string): void {
     this.activeLink = link;
   }
+  isClosed = false;
+
+  toggleSidebar() {
+    this.isClosed = !this.isClosed;
+  }
 }
