@@ -2,6 +2,8 @@ import {Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuizDetails } from '../../../model/quiz/quiz-details';
 import { NgClass, NgFor, NgIf } from '@angular/common';
+import { QuizData } from '../../../model/quiz/quiz-data';
+import { QuizResultDetails } from '../../../model/quiz/quiz-result-datails';
 
 
 @Component({
@@ -11,7 +13,7 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
   imports:[NgIf,NgFor, NgClass]
 })
 export class QuizStartComponent implements OnInit {
-  navigationState: any;
+  navigationState: QuizData;
   quizDetails: QuizDetails[] = []; // array delle domande che all'inizio è vuoto e poi dobbiamo andare a mettere le domande della pagina precedente
   currentQuestionIndex: number = 0; // indice delle domande che ci serve per scorrere le domande
   currentQuestion: QuizDetails | null = null; // domanda corrente che all'inizio è null
@@ -22,15 +24,16 @@ export class QuizStartComponent implements OnInit {
   quizCompleted: boolean = false; // flag per indicare il completamento del quiz
 
   constructor(private router: Router) {
-    this.navigationState = this.router.getCurrentNavigation()?.extras.state;
+    this.navigationState = <QuizData>this.router.getCurrentNavigation()?.extras.state;//cast non voluto(forzato)
     console.log('Navigazione Stato:', this.navigationState);//settare navigationState come variabile di classe per non perderla!
   }
 
   ngOnInit(): void {
+  
     // Recupera i dati passati tramite lo state: usando navigationState possiamo passare da uno stato all'altro di una componente
     // permettendo così di recuperare le domande ricevute nella pagina di quiz
-    if (this.navigationState && this.navigationState['quizDetails']) {
-      this.quizDetails = this.navigationState['quizDetails'];
+    if (this.navigationState && this.navigationState.quizDetails) {
+      this.quizDetails = this.navigationState.quizDetails;
       this.totalQuestions = this.quizDetails.length; // assegniamo il numero totale delle domande
       this.currentQuestion = this.quizDetails[this.currentQuestionIndex]; // impostiamo la prima domanda
     } else {
@@ -60,14 +63,8 @@ export class QuizStartComponent implements OnInit {
     } else {
       // quando il quiz è completato, passiamo alla componente quiz-end
       this.quizCompleted = true;
-      this.router.navigate(['/quiz-end'], { 
-        state: { 
-          totalQuestions: this.totalQuestions, // passiamo il numero totale delle domande
-          correctAnswersCount: this.correctAnswersCount // passiamo il numero di risposte corrette
-        } 
-      });
+      const qRD: QuizResultDetails = {totalQuestion: this.totalQuestions, correctAnswerCount: this.correctAnswersCount};
+      this.router.navigate(['/quiz-end'],{state: qRD} );
     }
   }
 }
-
-

@@ -3,6 +3,7 @@ import { QuizDetails } from '../../model/quiz/quiz-details';
 import { QuizService } from '../../model/quiz/quiz-service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { QuizData } from '../../model/quiz/quiz-data';
 
 
 
@@ -26,10 +27,8 @@ export class QuizComponent implements OnInit {
       .subscribe(
         (data: QuizDetails[]) => {  // 'data' è un array di QuizDetails
           this.quizDetails = data;  // Assegniamo l'array di domande
-          //console.log(data);
-          console.log(this.quizDetails);
-          console.log('QuizDetails:', this.quizDetails);
-          this.router.navigate(['/quiz-start'], { state: { quizDetails: this.quizDetails } })
+          const qD: QuizData = { quizDetails: this.quizDetails }; 
+          this.router.navigate(['/quiz-start'], { state: qD})
           .then(() => console.log('Navigazione completata con successo'))
           .catch((error) => console.error('Errore nella navigazione:', error));
         },

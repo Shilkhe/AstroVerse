@@ -1,58 +1,92 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('https://www.nasa.gov/wp-content/uploads/2022/10/stsci-01gfnn3pwjmy4rqxkz585bc4qh.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
 .quiz-container {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .question {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .answers {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .answer-card {
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .answer-card:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .correct-answer {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  .wrong-answer {
-    background-color: #f44336;
-    color: white;
-  }
-  
-  .highlight-correct {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  .next-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .next-btn:hover {
-    background-color: #0056b3;
-  }
-  
+  text-align: center;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.6); /* Sfondo più scuro per aumentare il contrasto */
+  border-radius: 20px;
+  box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.7); /* Ombra per risaltare la card */
+  display: inline-block;
+  margin: 50px;
+  max-width: 90%; /* Impedisce che la card diventi troppo grande su schermi larghi */
+  width: 750px; /* Card più grande */
+}
+
+h1, h2 {
+  color: #e74c3c; /* Colore rosso meno acceso */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Ombra più leggera per evitare riflessi forti */
+}
+
+.question {
+  font-size: 1.8rem;
+  color: #ffffff; /* Testo bianco per la domanda */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Ombra più leggera per evitare riflessi forti */
+}
+
+.answers {
+  margin-top: 20px;
+}
+
+.answer-card {
+  padding: 15px 30px;
+  margin: 10px 0;
+  background-color: rgba(255, 255, 255, 0.3); /* Card traslucida */
+  color: #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.answer-card:hover {
+  background-color: rgba(255, 255, 255, 0.6); /* Hover più evidente */
+}
+
+.correct-answer {
+  background-color: #28a745; /* Verde per la risposta corretta */
+}
+
+.wrong-answer {
+  background-color: #dc3545; /* Rosso per la risposta sbagliata */
+}
+
+.highlight-correct {
+  background-color: #f8c146; /* Giallo per evidenziare la risposta corretta selezionata */
+}
+
+.next-btn {
+  margin-top: 20px;
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ffaa00, #ff3300);
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 25px #ffaa00, 0 0 50px #ff3300;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.next-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 50px #ffaa00, 0 0 100px #ff3300;
+}
+
+.quiz-completed-message {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+
+
+
+
