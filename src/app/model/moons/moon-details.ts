@@ -9,5 +9,6 @@ export interface MoonDetails{
     atmosphere: string;
     planetId: number;
     description: string;
+    image: string;
 }
 

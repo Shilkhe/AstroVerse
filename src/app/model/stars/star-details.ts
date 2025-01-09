@@ -8,5 +8,5 @@ export interface StarDetails{
     discoveryDate: string;
     discoveredBy: string;
     description: string;
-
+    image: string;
 }

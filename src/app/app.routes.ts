@@ -13,6 +13,8 @@ import { QuizStartComponent } from './components/quiz/quiz-start/quiz-start.comp
 import { QuizEndComponent } from './components/quiz/quiz-end/quiz-end.component';
 import { Component } from '@angular/core';
 import { PlanetPageComponent } from './components/planets/planets-page/planets-page.component';
+import { MoonsPageComponent } from './components/moons/moons-page/moons-page.component';
+import { StarsPageComponent } from './components/stars/stars-page/stars-page.component';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
@@ -25,7 +27,9 @@ export const routes: Routes = [
     {path: 'members', component:MembersComponent},
     {path: 'randomFact', component:RandomfactComponent},
     {path: 'quiz', component:QuizComponent},
-    {path: 'quiz-start', component: QuizStartComponent},
-    {path: 'quiz-end', component: QuizEndComponent},
-    { path: 'planets/:id', component: PlanetPageComponent }
+    {path: 'quiz-start', component:QuizStartComponent},
+    {path: 'quiz-end', component:QuizEndComponent},
+    {path: 'planets/:id', component:PlanetPageComponent},
+    {path: 'moons/:id', component:MoonsPageComponent},
+    {path: 'stars/:id', component:StarsPageComponent},
 ];
