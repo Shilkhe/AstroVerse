@@ -11,7 +11,6 @@ export class PlanetService{
     private urlExtension: string = "api/planets";
     constructor(private http: HttpClient){}
     planetDetails: PlanetDetails | null = null;
-
     getPlanetDetails(): Observable<PlanetDetails[]> {
         return this.http.get<PlanetDetails[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
     }

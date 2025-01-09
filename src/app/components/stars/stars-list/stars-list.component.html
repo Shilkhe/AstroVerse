@@ -1,9 +1,7 @@
 @if(starDetails){
-    <div id="starCard">
-        @for(star of starDetails; track $index){
-            <app-stars [star]="star" (click)="getStar(star.id)"></app-stars>
-        }     
-    </div>
+  <div id="starCard">
+    @for(star of starDetails; track $index){
+      <app-stars [star]="star" (click)="getStar(star.id)"></app-stars>
+    }     
+  </div>
 }
-
-

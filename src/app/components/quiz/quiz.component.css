@@ -1,72 +1,63 @@
 :host {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url('https://miro.medium.com/v2/resize:fit:828/format:webp/1*vcDn-LBjj0IaD98XZaokJA.gif') no-repeat center center fixed;
-    background-size: cover;
-  }
-  
-  .quiz-home-container {
-    text-align: center;
-    padding: 80px;
-    background-color: rgba(0, 0, 0, 0.6); /* Sfondo più scuro per aumentare il contrasto */
-    border-radius: 20px;
-    box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.7); /* Ombra per risaltare la card */
-    display: inline-block;
-    margin: 50px;
-    max-width: 90%; /* Impedisce che la card diventi troppo grande su schermi larghi */
-    width: 750px; /* Card più grande */
-  }
-  
-  h1 {
-    font-size: 4rem;
-    color: #ffcc00; /* Giallo acceso per il titolo */
-    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; /* Ombra per un effetto più visibile */
-    margin-bottom: 20px;
-  }
-  
-  p {
-    font-size: 1.8rem;
-    color: #ffffff; /* Testo bianco per il contrasto con lo sfondo scuro */
-    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* Ombra per aumentare la visibilità */
-    margin-bottom: 30px;
-  }
-  
-  label {
-    font-size: 1.5rem;
-    color: #ffffff; /* Scritte bianche per le etichette */
-  }
-  
-  select {
-    font-size: 1.5rem;
-    color: #000000; /* Scritte nere per le select */
-    background-color: rgba(255, 255, 255, 0.8); /* Background chiaro per contrastare il testo */
-  }
-  
-  .start-quiz-btn {
-    padding: 20px 40px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background: linear-gradient(45deg, #ffaa00, #ff3300);
-    color: #ffffff;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    box-shadow: 0 0 25px #ffaa00, 0 0 50px #ff3300;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .start-quiz-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 50px #ffaa00, 0 0 100px #ff3300;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('https://miro.medium.com/v2/resize:fit:828/format:webp/1*vcDn-LBjj0IaD98XZaokJA.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.quiz-home-container {
+  text-align: center;
+  padding: 80px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.7);
+  display: inline-block;
+  margin: 50px;
+  max-width: 90%;
+  width: 750px;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+  margin-bottom: 30px;
+}
+
+label {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+select {
+  font-size: 1.5rem;
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.start-quiz-btn {
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ffaa00, #ff3300);
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 25px #ffaa00, 0 0 50px #ff3300;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.start-quiz-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 50px #ffaa00, 0 0 100px #ff3300;
+}

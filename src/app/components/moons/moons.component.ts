@@ -9,9 +9,6 @@ import { MoonDetails } from '../../model/moons/moon-details';
   encapsulation: ViewEncapsulation.None
 })
 export class MoonsComponent {
-    @Input({
-      required: true
-    })
-    moon: MoonDetails | null = null;
-  
+  @Input({ required: true })
+  moon: MoonDetails | null = null;
 }

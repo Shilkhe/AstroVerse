@@ -23,7 +23,7 @@ export class SpacecraftsPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id'); // Recupera l'id dalla route
+    const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.spacecraftservice.getSpacecraftById(+id).subscribe({
         next: (data) => {
@@ -41,6 +41,4 @@ export class SpacecraftsPageComponent implements OnInit {
       });
     }
   }
-
-
 }

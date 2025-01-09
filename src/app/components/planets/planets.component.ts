@@ -10,8 +10,6 @@ import { RouterModule } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class PlanetsComponent {
-  @Input({
-    required: true
-  })
+  @Input({ required: true })
   planet: PlanetDetails | null = null;
 }

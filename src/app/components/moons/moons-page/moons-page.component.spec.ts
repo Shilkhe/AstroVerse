@@ -1,23 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture,TestBed} from '@angular/core/testing';
+import {MoonsPageComponent}from './moons-page.component';
 
-import { MoonsPageComponent } from './moons-page.component';
+describe('MoonsPageComponent',()=>{
+  let component:MoonsPageComponent;
+  let fixture:ComponentFixture<MoonsPageComponent>;
 
-describe('MoonsPageComponent', () => {
-  let component: MoonsPageComponent;
-  let fixture: ComponentFixture<MoonsPageComponent>;
-
-  beforeEach(async () => {
+  beforeEach(async()=>{
     await TestBed.configureTestingModule({
-      imports: [MoonsPageComponent]
-    })
-    .compileComponents();
+      imports:[MoonsPageComponent]
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(MoonsPageComponent);
-    component = fixture.componentInstance;
+    fixture=TestBed.createComponent(MoonsPageComponent);
+    component=fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create',()=>{
     expect(component).toBeTruthy();
   });
 });

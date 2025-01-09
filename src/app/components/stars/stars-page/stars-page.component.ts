@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { StarService } from '../../../model/stars/star-service';
-import { StarDetails } from '../../../model/stars/star-details';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { NgIf } from '@angular/common';
+import {Component,OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {StarService} from '../../../model/stars/star-service';
+import {StarDetails} from '../../../model/stars/star-details';
+import {DomSanitizer,SafeResourceUrl} from '@angular/platform-browser';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-stars-page',

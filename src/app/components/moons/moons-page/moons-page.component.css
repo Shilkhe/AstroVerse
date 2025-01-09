@@ -1,18 +1,18 @@
-.planet-details {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    max-width: 600px;
-    margin: auto;
-  }
-  h1 {
-    color: #2c3e50;
-  }
-  p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  .smd-iframe-iframe {
-    width: 100%;
-    height: 500px;
-  }
+.planet-details{
+  padding:1rem;
+  border:1px solid #ddd;
+  border-radius:8px;
+  max-width:600px;
+  margin:auto;
+}
+h1{
+  color:#2c3e50;
+}
+p{
+  font-size:1rem;
+  line-height:1.5;
+}
+.smd-iframe-iframe{
+  width:100%;
+  height:500px;
+}

@@ -1,20 +1,12 @@
-<!-- @if(moonDetail){
-    <div id="moonCard">
-        @for(moon of moonDetail; track $index){
-            <app-moons [moon]="moon"></app-moons>
-        }     
-    </div>
-} -->
 @if (moonDetails) {
-    <div id="factCard">
-        @for (moon of moonDetails; track moon) {
-            <app-moons [moon]="moon" (click)="getMoon(moon.id)"></app-moons>
-        }
-    </div>
+  <div id="factCard">
+    @for (moon of moonDetails; track moon) {
+      <app-moons [moon]="moon" (click)="getMoon(moon.id)"></app-moons>
+    }
+  </div>
 } @else {
-    <p>Nessun dato disponibile.</p>
+  <p>Nessun dato disponibile.</p>
 }
 <button (click)="prevPage()" [disabled]="page === 0">Pagina Precedente</button>
 <span> Pagina {{ page + 1 }} di {{ totalPages }} </span>
 <button (click)="nextPage()" [disabled]="page >= totalPages - 1">Pagina Successiva</button>
-

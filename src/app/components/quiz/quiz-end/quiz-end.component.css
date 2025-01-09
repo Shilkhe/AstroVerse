@@ -5,19 +5,18 @@
   min-height: 100vh;
   background: url('https://i.pinimg.com/originals/90/9b/7a/909b7a49b758d8c410a43b0c04ac3598.gif') no-repeat top center;
   background-size: cover;
-  background-position: 0 65%; /* Sposta l'immagine più in alto, nascondendo la parte inferiore */
+  background-position: 0 65%;
 }
 
-
 .quiz-end-container {
-  margin-top: 250px; /* Sposta la card più in basso */
+  margin-top: 250px;
   margin-left: 100px;
   padding: 30px;
-  background-color: rgba(0, 0, 0, 0.7); /* Trasparenza per contrastare la GIF */
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* Aggiunta ombra per risaltare la card */
-  width: 560px; /* Card più grande del 40% rispetto alla versione precedente */
-  height: 400px; /* Card meno alta rispetto alla versione precedente */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  width: 560px;
+  height: 400px;
   position: relative;
   text-align: center;
   color: #ffffff;
@@ -25,9 +24,9 @@
 
 h2 {
   font-size: 2.5rem;
-  color: #ffcc00; /* Giallo per il titolo */
+  color: #ffcc00;
   margin-bottom: 20px;
-  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; /* Ombra per migliorare la visibilità */
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
 }
 
 .score {
@@ -65,12 +64,3 @@ button:hover {
   transform: scale(1.1);
   box-shadow: 0 0 50px #ffaa00, 0 0 100px #ff3300;
 }
-
-
-
-
-
-
-  
-  
-  

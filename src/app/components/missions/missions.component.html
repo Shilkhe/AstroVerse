@@ -1,22 +1,22 @@
-@if(mission){
-    <div class="mission-container">
-        <article class="mission-info">
-            <div id="mission" aria-label="Mission Information">
-                <dl>
-                    <dt>Name:</dt>
-                    <dd><span>{{mission.name || "Not available"}}</span></dd>
-                    <dt>Launch Date:</dt>
-                    <dd><span>{{mission.launchDate || "Not available"}}</span></dd>
-                    <dt>End Date:</dt>
-                    <dd><span>{{mission.endDate || "Unknown"}}</span></dd>
-                    <dt>Target:</dt>
-                    <dd><span>{{mission.target || "Not available"}}</span></dd>
-                    <dt>Status:</dt>
-                    <dd><span>{{mission.status || "Unavailable"}}</span></dd>
-                    <dt>Description:</dt>
-                    <dd><span>{{mission.description || "No description available"}}</span></dd>
-                </dl>
-            </div>
-        </article>
-    </div> 
+@if (mission) {
+  <div class="mission-container">
+    <article class="mission-info">
+      <div id="mission" aria-label="Mission Information">
+        <dl>
+          <dt>Name:</dt>
+          <dd><span>{{ mission.name || "Not available" }}</span></dd>
+          <dt>Launch Date:</dt>
+          <dd><span>{{ mission.launchDate || "Not available" }}</span></dd>
+          <dt>End Date:</dt>
+          <dd><span>{{ mission.endDate || "Unknown" }}</span></dd>
+          <dt>Target:</dt>
+          <dd><span>{{ mission.target || "Not available" }}</span></dd>
+          <dt>Status:</dt>
+          <dd><span>{{ mission.status || "Unavailable" }}</span></dd>
+          <dt>Description:</dt>
+          <dd><span>{{ mission.description || "No description available" }}</span></dd>
+        </dl>
+      </div>
+    </article>
+  </div>
 }

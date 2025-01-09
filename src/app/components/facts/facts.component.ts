@@ -9,9 +9,8 @@ import { FactDetails } from '../../model/facts/fact-details';
   encapsulation: ViewEncapsulation.None
 })
 export class FactsComponent {
-@Input({
-      required: true
-    })
-    fact: FactDetails | null = null;
+  @Input({
+    required: true
+  })
+  fact: FactDetails | null = null;
 }
-

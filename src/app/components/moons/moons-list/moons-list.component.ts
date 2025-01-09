@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoonDetails } from '../../../model/moons/moon-details';
 import { MoonService } from '../../../model/moons/moon-service';
-import { Observable } from 'rxjs';
 import { MoonsComponent } from "../moons.component";
 import { Router } from '@angular/router';
 
@@ -11,18 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './moons-list.component.html',
   styleUrl: './moons-list.component.css'
 })
-export class MoonsListComponent implements OnInit{
-  // moonDetail!: MoonDetails[];
-  //  constructor(private moonService: MoonService){
-  
-  //  }
-  // ngOnInit(): void {
-  //     let opd: Observable<MoonDetails[]> = this.moonService.getMoonDetails();
-  //     opd.subscribe({
-  //       next: sts => this.moonDetail = sts,
-  //      error: err => console.log(err)
-  //    });
-  //  }
+export class MoonsListComponent implements OnInit {
   moonDetails: MoonDetails[] = [];
   page: number = 0;
   readonly size: number = 6;
@@ -31,48 +19,48 @@ export class MoonsListComponent implements OnInit{
   constructor(private moonService: MoonService, private router: Router) {}
 
   ngOnInit(): void {
-      this.loadMoons();
+    this.loadMoons();
   }
 
   private loadMoons(): void {
-      this.moonService.getMoonDetails(this.page, this.size).subscribe({
-          next: (response) => this.updateMoons(response.content, response.totalPages),
-          error: (err) => this.handleError(err)
-      });
+    this.moonService.getMoonDetails(this.page, this.size).subscribe({
+      next: (response) => this.updateMoons(response.content, response.totalPages),
+      error: (err) => this.handleError(err)
+    });
   }
 
   private updateMoons(moons: MoonDetails[], totalPages: number): void {
-      this.moonDetails = moons;
-      this.totalPages = totalPages;
+    this.moonDetails = moons;
+    this.totalPages = totalPages;
   }
 
   private handleError(error: any): void {
-      console.error('Errore nel caricamento dei dati', error);
+    console.error('Errore nel caricamento dei dati', error);
   }
 
   nextPage(): void {
-      if (this.page < this.totalPages - 1) {
-          this.page++;
-          this.loadMoons();
-      }
+    if (this.page < this.totalPages - 1) {
+      this.page++;
+      this.loadMoons();
+    }
   }
 
   prevPage(): void {
-      if (this.page > 0) {
-          this.page--;
-          this.loadMoons();
-      }
+    if (this.page > 0) {
+      this.page--;
+      this.loadMoons();
+    }
   }
 
   isFirstPage(): boolean {
-      return this.page === 0;
+    return this.page === 0;
   }
 
   isLastPage(): boolean {
-      return this.page >= this.totalPages - 1;
+    return this.page >= this.totalPages - 1;
   }
+
   getMoon(id: number): void {
     this.router.navigate([`/moons-page/${id}`]);
-   };
+  }
 }
-

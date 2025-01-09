@@ -10,7 +10,7 @@ import { MissionDetails } from '../../model/missions/mission-details';
 })
 export class MissionsComponent {
   @Input({
-      required: true
-    })
-    mission: MissionDetails | null = null;
+    required: true
+  })
+  mission: MissionDetails | null = null;
 }

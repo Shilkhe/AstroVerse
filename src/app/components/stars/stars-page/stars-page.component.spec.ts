@@ -1,6 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { StarsPageComponent } from './stars-page.component';
+import {ComponentFixture,TestBed} from '@angular/core/testing';
+import {StarsPageComponent} from './stars-page.component';
 
 describe('StarsPageComponent', () => {
   let component: StarsPageComponent;
@@ -9,8 +8,7 @@ describe('StarsPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [StarsPageComponent]
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(StarsPageComponent);
     component = fixture.componentInstance;
