@@ -29,7 +29,7 @@ export class SpacecraftsPageComponent implements OnInit {
         next: (data) => {
           this.spacecrafts = data;
           if (this.spacecrafts?.name) {
-            const baseURL = 'https://eyes.nasa.gov/apps/solar-system/#/sc';
+            const baseURL = 'https://eyes.nasa.gov/apps/solar-system/#/sc_';
             this.iframeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
               `${baseURL}${this.spacecrafts.name.toLowerCase()}`
             );

@@ -1,10 +1,10 @@
 <div *ngIf="star; else errorTemplate" class="star-details">
     <h1>{{ star.name }}</h1>
-    <p><strong>Mass:</strong> {{ star.mass }} km</p>
-    <p><strong>Radius:</strong> {{ star.radius }} AU</p>
-    <p><strong>Planet Distance:</strong> {{ star.spectralType }} days</p>
-    <p><strong>Orbital Period:</strong> {{ star.luminosity }}</p>
-    <p><strong>Discovery Date:</strong> {{ star.temperature }}</p>
+    <p><strong>Mass:</strong> {{ star.mass }} kg</p>
+    <p><strong>Radius:</strong> {{ star.radius }} km</p>
+    <p><strong>Spectral Type:</strong> {{ star.spectralType }}</p>
+    <p><strong>Luminosity:</strong> {{ star.luminosity }}</p>
+    <p><strong>Temperature:</strong> {{ star.temperature }}</p>
     <p><strong>Description:</strong> {{ star.description }}</p>
     <p><strong>Image:</strong> {{ star.image }}</p>
   </div>
