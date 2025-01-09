@@ -5,5 +5,6 @@ export interface MissionDetails{
     target: string;
     status: string;
     description: string;
+    image: string;
 }
 

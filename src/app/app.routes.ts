@@ -13,6 +13,8 @@ import { QuizStartComponent } from './components/quiz/quiz-start/quiz-start.comp
 import { QuizEndComponent } from './components/quiz/quiz-end/quiz-end.component';
 import { Component } from '@angular/core';
 import { PlanetPageComponent } from './components/planets/planets-page/planets-page.component';
+import { MissionsPageComponent } from './components/missions/missions-page/missions-page.component';
+import { SpacecraftsPageComponent } from './components/spacecrafts/spacecrafts-page/spacecrafts-page.component';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
@@ -27,5 +29,7 @@ export const routes: Routes = [
     {path: 'quiz', component:QuizComponent},
     {path: 'quiz-start', component: QuizStartComponent},
     {path: 'quiz-end', component: QuizEndComponent},
-    { path: 'planets/:id', component: PlanetPageComponent }
+    { path: 'planets/:id', component: PlanetPageComponent },
+    { path: 'missions/:id', component: MissionsPageComponent }, 
+    { path: 'spacecrafts/:id', component: SpacecraftsPageComponent }
 ];

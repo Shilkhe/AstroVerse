@@ -1,0 +1,12 @@
+<div *ngIf="mission; else errorTemplate" class="planet-details">
+    <h1>{{ mission.name }}</h1>
+    <p><strong>Launch Date:</strong> {{ mission.launchDate }} kg</p>
+    <p><strong>End Date:</strong> {{ mission.endDate }} km</p>
+    <p><strong>Target:</strong> {{ mission.target }} AU</p>
+    <p><strong>Status:</strong> {{ mission.status }} days</p>
+    <p><strong>Description:</strong> {{ mission.description }}</p>
+    <p><strong>Image:</strong> {{ mission.image }}</p>
+  </div>
+  <ng-template #errorTemplate>
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  </ng-template>
