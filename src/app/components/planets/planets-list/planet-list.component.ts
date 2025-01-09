@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PlanetsComponent } from '../planets.component';
 import { PlanetDetails } from '../../../model/planets/planet-details';
 import { PlanetService } from '../../../model/planets/planet-service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -13,14 +13,17 @@ import { Observable } from 'rxjs';
 })
 export class PlanetListComponent implements OnInit {
  planetDetail!: PlanetDetails[];
- constructor(private planetService: PlanetService){
-
+ constructor(private planetService: PlanetService, private router: Router){
+  
  }
 ngOnInit(): void {
-    let opd: Observable<PlanetDetails[]> = this.planetService.getPlanetDetails();
+    const opd: Observable<PlanetDetails[]> = this.planetService.getPlanetDetails();
     opd.subscribe({
       next: sts => this.planetDetail = sts,
      error: err => console.log(err)
    });
  }
+ getPlanet(id: number): void {
+  this.router.navigate([`/planets-page/${id}`]);
+ };
 }

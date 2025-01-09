@@ -1,4 +1,5 @@
 export interface PlanetDetails{
+    id: number;
     name: string;
     mass: number;
     radius: number;
