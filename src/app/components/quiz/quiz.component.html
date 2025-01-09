@@ -1,33 +1,35 @@
 <div class="quiz-home-container">
-    <h1>Welcome to the Solar System Quiz!</h1>
-    <p>
-      Explore the wonders of our solar system and test your knowledge. 
-      Select your difficulty level and number of questions to begin your journey!
-    </p>
-  
-    <div>
-      <label for="difficulty">Select your difficulty</label>
-      <select id="difficulty">
-        <option value="easy">Easy</option>
-        <option value="medium">Normal</option>
-        <option value="hard">Hard</option>
-        <option value="astronaut">Astronaut</option>
-      </select>
-    </div>
-  
-    <div>
-      <label for="numberOfQuestions">Select the number of questions</label>
-      <select id="numberOfQuestions">
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-      </select>
-    </div>
-  
-    <div>
-      <button class="start-quiz-btn" (click)="getQuiz()">LET'S GO!</button>
-    </div>
+  <h1>Welcome to the Solar System Quiz!</h1>
+  <p>
+    Explore the wonders of our solar system and test your knowledge. 
+    Select your difficulty level and number of questions to begin your journey!
+  </p>
+
+  <div>
+    <label for="difficulty">Select your difficulty</label>
+    <select id="difficulty" [(ngModel)]="difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium">Normal</option>
+      <option value="hard">Hard</option>
+      <option value="astronaut">Astronaut</option>
+    </select>
   </div>
+
+  <div>
+    <label for="numberOfQuestions">Select the number of questions</label>
+    <select id="numberOfQuestions" [(ngModel)]="numberOfQuestions">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+    </select>
+  </div>
+
+  <div>
+    <button class="start-quiz-btn" (click)="getQuiz()">LET'S GO!</button>
+  </div>
+</div>
+
+
   
   
