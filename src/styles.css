@@ -6,11 +6,249 @@
     font-family: Erode-italics;
     src: url(../fonts/Erode-VariableItalic.ttf);
 }
-html{
+html, body{
     font-family: Erode;
     background-color:#0a0813;
     margin-top: 115px;
+    height: 100%;
+    color: rgb(223, 223, 223);
 }
 a{
     font-family: Erode;
+}
+
+body { 
+    margin: 0; 
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    margin-top: 8rem;
+    width: 300px;
+    height: calc(100svh - 12rem);
+    border-top: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+    border-radius: 0 24px 24px 0;
+    z-index: 200;
+    background: var(--glass);
+    box-shadow: 0 0px 30px var(--box);
+    transition: all 0.3s ease-in-out;
+    /* overflow-y: scroll;
+  overflow-x: unset; */
+    padding-bottom: 2rem;
+    scrollbar-width: none;
+}
+
+.sidebar-folder {
+    z-index: 30;
+    content: '';
+    position: absolute;
+    right: -41px;
+    top: calc(50% - 2rem);
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40%;
+    min-height: 6rem;
+    background: inherit;
+    border-radius: 0 40px 40px 0;
+    border-right: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    box-shadow: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+        top: 50%;
+        right: -31px;
+        width: 30px;
+        height: 50%;
+    }
+}
+
+.sidebar-folder p {
+    font-family: 'Erode', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--current-color);
+    text-align: center;
+    transform: rotateZ(90deg);
+    transition: all 0.1s ease;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.2rem;
+
+    }
+}
+
+.sidebar-folder:hover {
+    border-right: 1px solid var(--current-color);
+    border-top: 1px solid var(--current-color);
+    border-bottom: 1px solid var(--current-color);
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+.sidebar .toggle-button {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    background-color: var(--wiki-text);
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    width: 3rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.sidebar .toggle-button svg {
+    fill: white;
+}
+
+.sidebar .collapsed .section-title,
+.sidebar .collapsed .page-list {
+    display: none;
+    /* Nasconde i titoli delle sezioni e le liste di pagine quando ristretta */
+}
+
+h5 {
+    padding-bottom: 4px;
+    padding-left: 8px;
+    font-size: 1.2rem;
+    font-family: var(--font-wiki), sans-serif;
+    color: var(--current-color);
+    font-weight: 400;
+}
+
+
+.button {
+    font-size: 1.2rem;
+    font-family: 'Erode', serif;
+    font-weight: 500;
+}
+
+.section-title,
+.section-button {
+    border-bottom: 1px solid var(--border);
+    /* cursor: pointer; */
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: 'Erode', serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.section-title {
+    border-right: 1px solid transparent;
+    color: var(--current-color);
+}
+
+.section-title:hover {
+    border-bottom: 1px solid var(--current-color);
+}
+
+.section-title-selected {
+    border-bottom: 1px dashed var(--current-color) !important;
+}
+
+.section-title-selected:hover {
+    border-bottom: 1px solid var(--current-color) !important;
+}
+
+.page-list {
+    /* padding: 16px; */
+    display: flex;
+    flex-direction: column;
+    /* display: none; */
+    height: 0;
+    transition: all 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: var(--current-color);
+    font-weight: 300;
+    font-family: var(--font-wiki), sans-serif;
+}
+
+.page {
+    cursor: pointer;
+    width: fit-content;
+    padding: 8px;
+    margin-left: 48px;
+    height: 40px;
+    font-family: 'Erode', serif;
+}
+
+.settings {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 2rem;
+    border-top: 1px solid var(--border);
+    gap: 16px;
+}
+
+.color-picker {
+    cursor: pointer;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 9999px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--current-color);
+    background: var(--color);
+}
+
+.dark-mode {
+    cursor: pointer;
+    height: 1rem;
+    width: 1rem;
+}
+
+.version {
+    display: block;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 5;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 9999px;
+    background-color: var(--current-color);
+    color: var(--inverted-color);
+    border: none;
+}
+
+/* From Uiverse.io by catraco */
+/*------ Settings ------*/
+.container-check {
+    --color: var(--current-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* user-select: none; */
+    fill: var(--color);
+    width: 24px;
+    transition: all 0.5s ease;
 }
