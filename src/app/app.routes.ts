@@ -8,6 +8,9 @@ import { MissionsListComponent } from './components/missions/missions-list/missi
 import { StarsListComponent } from './components/stars/stars-list/stars-list.component';
 import { MembersComponent } from './components/members/members.component';
 import { RandomfactComponent } from './components/randomfact/randomfact.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+import { QuizStartComponent } from './components/quiz/quiz-start/quiz-start.component';
+import { PlanetPageComponent } from './components/planets/planets-page/planets-page.component';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent},
@@ -18,5 +21,8 @@ export const routes: Routes = [
     {path: 'missions', component:MissionsListComponent},
     {path: 'facts', component:FactsListComponent},
     {path: 'members', component:MembersComponent},
-    {path: 'randomFact', component:RandomfactComponent}
+    {path: 'randomFact', component:RandomfactComponent},
+    {path: 'quiz', component:QuizComponent},
+    {path: 'quiz-start', component: QuizStartComponent},
+    { path: 'planets/:id', component: PlanetPageComponent }
 ];
