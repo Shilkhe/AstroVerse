@@ -166,7 +166,6 @@ body {
   }
 }
 
-/* Router Outlet Styles */
 router-outlet {
   display: none;
 }
@@ -175,4 +174,42 @@ router-outlet + * {
   flex: 1;
   width: 100%;
   transition: margin-left 0.3s ease;
+}
+.results-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(83, 61, 163, 0.452);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 4px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.result-item {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.result-item:hover {
+  background-color: #f5f5f5;
+}
+
+.result-name {
+  font-weight: bold;
+}
+
+.result-type {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 4px;
 }
