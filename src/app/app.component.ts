@@ -23,7 +23,7 @@ export class AppComponent {
   }
 
 
-  sections: any[] = [{ name: "Planets" }, { pages: "sez 1" }];
+  sections: any[] = [{name: "Planets" }, { pages: "sez 1" }];
   pageId: string | null = null;  // Nullable type for better handling
   expandedSection: string | null = null; // Tiene traccia della sezione attualmente espansa
   isCollapsed: boolean = false;
