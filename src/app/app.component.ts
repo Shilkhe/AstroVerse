@@ -22,7 +22,54 @@ export class AppComponent {
   }
 
 
-  sections: any[] = [{name: "Planets" }, { pages: "sez 1" }];
+  sections = [
+    {
+      id: 'stars',
+      name: 'Stars',
+      pages: [
+        { id: 'sun', title: 'Sun', route: '/wiki/stars/sun' },
+        { id: 'proxima-centauri', title: 'Proxima Centauri', route: '/wiki/stars/proxima-centauri' },
+        // Add more star pages as needed
+      ]
+    },
+    {
+      id: 'planets',
+      name: 'Planets',
+      pages: [
+        { id: 'mercury', title: 'Mercury', route: '/wiki/planets/mercury' },
+        { id: 'venus', title: 'Venus', route: '/wiki/planets/venus' },
+        { id: 'earth', title: 'Earth', route: '/wiki/planets/earth' },
+        // Add more planets
+      ]
+    },
+    {
+      id: 'moons',
+      name: 'Moons',
+      pages: [
+        { id: 'luna', title: 'Luna', route: '/wiki/moons/luna' },
+        { id: 'titan', title: 'Titan', route: '/wiki/moons/titan' },
+        // Add more moons
+      ]
+    },
+    {
+      id: 'missions',
+      name: 'Missions',
+      pages: [
+        { id: 'apollo', title: 'Apollo Program', route: '/wiki/missions/apollo' },
+        { id: 'voyager', title: 'Voyager Program', route: '/wiki/missions/voyager' },
+        // Add more missions
+      ]
+    },
+    {
+      id: 'spacecrafts',
+      name: 'Spacecrafts',
+      pages: [
+        { id: 'hubble', title: 'Hubble Space Telescope', route: '/wiki/spacecrafts/hubble' },
+        { id: 'iss', title: 'International Space Station', route: '/wiki/spacecrafts/iss' },
+        // Add more spacecrafts
+      ]
+    }
+  ];
   pageId: string | null = null;  // Nullable type for better handling
   expandedSection: string | null = null; // Tiene traccia della sezione attualmente espansa
   isCollapsed: boolean = false;
@@ -69,14 +116,15 @@ export class AppComponent {
   contentHeight: string = '0px';
 
   toggleSection(sectionId: string) {
-    const pages = this.sections.find(section => section['id'] === sectionId)['pages'];
-    this.contentHeight = `${pages.length * 40}px`;
-    if (this.expandedSection === sectionId) {
-      this.contentHeight = '0px';
-      this.expandedSection = null; // Chiudi la sezione se già aperta
-    } else {
-
-      this.expandedSection = sectionId; // Aggiorna la sezione espansa
+    const section = this.sections.find(section => section.id === sectionId);
+    if (section) {
+      if (this.expandedSection === sectionId) {
+        this.contentHeight = '0px';
+        this.expandedSection = null;
+      } else {
+        this.contentHeight = `${section.pages.length * 40}px`;
+        this.expandedSection = sectionId;
+      }
     }
   }
 
@@ -93,8 +141,9 @@ export class AppComponent {
     }
   }
 
-  navigateToPage(title: string, event: Event) {
+  navigateToPage(page: any, event: Event) {
     event.stopPropagation();
+    this.router.navigate([page.route]);
     if (window.innerWidth < 768) {
       this.toggleSidebar();
     }

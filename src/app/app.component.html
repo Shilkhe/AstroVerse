@@ -24,39 +24,35 @@
 </nav>
 
 <div class="sidebar" [class.collapsed]="isCollapsed">
- 
-  <div class="sidebar-folder" (click)="toggleSidebar()"><p>Sections</p></div>
+  <div class="sidebar-folder" (click)="toggleSidebar()">
+    <p>Sections</p>
+  </div>
 
   <div style="overflow-y: scroll; scrollbar-width: none; height: 100%;">
-
     <div *ngFor="let section of sections">
-      <div
-        [ngClass]="isExpanded(section.id) ? 'section-title-selected' : ''"
-        (click)="toggleSection(section.id)"
-        class="section-title"
-      >
-        <div class="flex row" style="justify-content: start;">
+      <div [ngClass]="isExpanded(section.id) ? 'section-title-selected' : ''" (click)="toggleSection(section.id)"
+        class="section-title">
+        <div class="flex row" style="justify-content: start; align-items: center; gap: 8px;">
           <label class="container-check" [style.rotate]="isExpanded(section.id) ? '90deg' : '0deg'">
-            <!-- <input [checked]="isExpanded(section.id)" type="checkbox"> -->
-            <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="chevron-right"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg>
+            <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="chevron-right">
+              <path fill="#f2f2f2"
+                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z">
+              </path>
+            </svg>
           </label>
-          <h5>{{ section.name }}</h5>
+          <span class="section-name">{{ section.name }}</span>
         </div>
-        <div
-          #pageList
-          data-id="{{ section.id }}"
-          class="page-list"
+        <div #pageList data-id="{{ section.id }}" class="page-list"
           [style.height]="isExpanded(section.id) ? contentHeight : '0'"
-          [style.overflow]="isExpanded(section.id) ? 'visible' : 'hidden'"
-        >
+          [style.overflow]="isExpanded(section.id) ? 'visible' : 'hidden'">
           <div class="page" *ngFor="let page of section.pages" (click)="navigateToPage(page, $event)">
+            {{ page.title }}
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 
 
