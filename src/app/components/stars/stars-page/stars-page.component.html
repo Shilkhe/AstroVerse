@@ -1,0 +1,28 @@
+<div *ngIf="star; else errorTemplate" class="star-details">
+    <h1>{{ star.name }}</h1>
+    <p><strong>Mass:</strong> {{ star.mass }} kg</p>
+    <p><strong>Radius:</strong> {{ star.radius }} km</p>
+    <p><strong>Spectral Type:</strong> {{ star.spectralType }}</p>
+    <p><strong>Luminosity:</strong> {{ star.luminosity }}</p>
+    <p><strong>Temperature:</strong> {{ star.temperature }}</p>
+    <p><strong>Description:</strong> {{ star.description }}</p>
+    <p><strong>Image:</strong> {{ star.image }}</p>
+  </div>
+
+  <figure>
+    <span>
+        <iframe 
+          *ngIf="iframeUrl"
+          [src]="iframeUrl"
+          title="Solar System" 
+          class="smd-iframe-iframe border-0" 
+          allow="fullscreen"
+          >
+        </iframe>
+    </span>
+  </figure>
+  
+  <ng-template #errorTemplate>
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  </ng-template>
+

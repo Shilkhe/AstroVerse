@@ -3,6 +3,7 @@ import { SpacecraftDetails } from '../../../model/spacecrafts/spacecraft-details
 import { SpacecraftService } from '../../../model/spacecrafts/spacecraft-service';
 import { Observable } from 'rxjs';
 import { SpacecraftsComponent } from "../spacecrafts.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-spacecrafts-list',
@@ -27,7 +28,7 @@ export class SpacecraftsListComponent implements OnInit{
   readonly size: number = 6;
   totalPages: number = 0;
 
-  constructor(private spacecraftService: SpacecraftService) {}
+  constructor(private spacecraftService: SpacecraftService, private router: Router) {}
 
   ngOnInit(): void {
       this.loadSpacecrafts();
@@ -70,4 +71,7 @@ export class SpacecraftsListComponent implements OnInit{
   isLastPage(): boolean {
       return this.page >= this.totalPages - 1;
   }
+  getSpacecrafts(id: number): void {
+    this.router.navigate([`/spacecrafts-page/${id}`]);
+   };
 }

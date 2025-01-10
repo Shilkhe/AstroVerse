@@ -1,4 +1,5 @@
 export interface StarDetails{
+    id: number;
     name: string;
     mass: number;
     radius: number;
@@ -8,5 +9,5 @@ export interface StarDetails{
     discoveryDate: string;
     discoveredBy: string;
     description: string;
-
+    image: string;
 }

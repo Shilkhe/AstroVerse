@@ -18,4 +18,7 @@ export class MissionService{
     getMissionDetails(page: number, size: number): Observable<any> {
         return this.http.get<any>(`${HttpConfig.apiUrl}${this.urlExtension}?page=${page}&size=${size}`);
     }
+    getMissionById(id: number): Observable<MissionDetails> {
+            return this.http.get<MissionDetails>(`${HttpConfig.apiUrl}${this.urlExtension}/${id}`);
+        }
 }

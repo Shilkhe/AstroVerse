@@ -1,0 +1,25 @@
+<div *ngIf="spacecrafts; else errorTemplate" class="planet-details">
+    <h1>{{ spacecrafts.name }}</h1>
+    <p><strong>Type:</strong> {{ spacecrafts.type }}</p>
+    <p><strong>Manufacturer:</strong> {{ spacecrafts.manufacturer }}</p>
+    <p><strong>Launch Date:</strong> {{ spacecrafts.launchVehicle }}</p>
+    <p><strong>Description:</strong> {{ spacecrafts.description }}</p>
+    <p><strong>Image:</strong> {{ spacecrafts.image }}</p>
+  </div>
+
+  <figure>
+    <span>
+        <iframe 
+          *ngIf="iframeUrl"
+          [src]="iframeUrl"
+          title="Solar System" 
+          class="smd-iframe-iframe border-0" 
+          allow="fullscreen"
+          >
+        </iframe>
+    </span>
+  </figure>
+  
+  <ng-template #errorTemplate>
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  </ng-template>

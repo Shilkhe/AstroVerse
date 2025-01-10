@@ -1,4 +1,5 @@
 export interface MoonDetails{
+    id: number;
     name: string;
     mass: number;
     radius: number;
@@ -9,5 +10,6 @@ export interface MoonDetails{
     atmosphere: string;
     planetId: number;
     description: string;
+    image: string;
 }
 

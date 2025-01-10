@@ -3,6 +3,7 @@ import { StarDetails } from '../../../model/stars/star-details';
 import { StarService } from '../../../model/stars/star-service';
 import { Observable } from 'rxjs';
 import { StarsComponent } from "../stars.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-stars-list',
@@ -12,7 +13,7 @@ import { StarsComponent } from "../stars.component";
 })
 export class StarsListComponent implements OnInit {
     starDetails!: StarDetails[];
-     constructor(private starService: StarService){
+     constructor(private starService: StarService, private router: Router){
     
      }
     ngOnInit(): void {
@@ -22,4 +23,7 @@ export class StarsListComponent implements OnInit {
          error: err => console.log(err)
        });
      }
+     getStar(id: number): void {
+      this.router.navigate([`/stars-page/${id}`]);
+     };
 }

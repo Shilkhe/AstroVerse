@@ -3,6 +3,7 @@ import { MissionDetails } from '../../../model/missions/mission-details';
 import { MissionService } from '../../../model/missions/mission-service';
 import { Observable } from 'rxjs';
 import { MissionsComponent } from "../missions.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-missions-list',
@@ -27,7 +28,7 @@ export class MissionsListComponent implements OnInit {
     readonly size: number = 6;
     totalPages: number = 0;
 
-    constructor(private missionService: MissionService) {}
+    constructor(private missionService: MissionService, private router: Router) {}
 
     ngOnInit(): void {
         this.loadMissions();
@@ -70,4 +71,7 @@ export class MissionsListComponent implements OnInit {
     isLastPage(): boolean {
         return this.page >= this.totalPages - 1;
     }
+    getMission(id: number): void {
+        this.router.navigate([`/missions-page/${id}`]);
+       };
 }

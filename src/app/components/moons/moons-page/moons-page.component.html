@@ -1,0 +1,31 @@
+<div *ngIf="moon; else errorTemplate" class="moon-details">
+    <h1>{{ moon.name }}</h1>
+    <p><strong>Mass:</strong> {{ moon.radius }} km</p>
+    <p><strong>Radius:</strong> {{ moon.radius }} AU</p>
+    <p><strong>Planet Distance:</strong> {{ moon.planetDistance }} days</p>
+    <p><strong>Orbital Period:</strong> {{ moon.orbitalPeriod }}</p>
+    <p><strong>Discovery Date:</strong> {{ moon.discoveryDate }}</p>
+    <p><strong>Discovered By:</strong> {{ moon.discoveredBy }}</p>
+    <p><strong>Atmosphere</strong> {{ moon.atmosphere ? 'Yes' : 'No' }}</p>
+    <p><strong>ID Planet:</strong> {{ moon.planetId }}</p>
+    <p><strong>Description:</strong> {{ moon.description }}</p>
+    <p><strong>Image:</strong> {{ moon.image }}</p>
+  </div>
+
+  <figure>
+    <span>
+        <iframe 
+          *ngIf="iframeUrl"
+          [src]="iframeUrl"
+          title="Solar System" 
+          class="smd-iframe-iframe border-0" 
+          allow="fullscreen"
+          >
+        </iframe>
+    </span>
+  </figure>
+  
+  <ng-template #errorTemplate>
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  </ng-template>
+

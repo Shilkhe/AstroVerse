@@ -14,4 +14,7 @@ export class StarService{
     getStarDetails(): Observable<StarDetails[]> {
         return this.http.get<StarDetails[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
     }
+    getStarById(id: number): Observable<StarDetails> {
+        return this.http.get<StarDetails>(`${HttpConfig.apiUrl}${this.urlExtension}/${id}`);
+    }
 }
