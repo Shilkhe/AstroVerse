@@ -11,20 +11,21 @@ html, body{
     background-color:#0a0813;
     margin-top: 115px;
     height: 100%;
-    color: #f2f2f2;
+    color: #dadada;
 }
 a{
     font-family: Erode;
 }
 
 body { 
-    margin: 0; 
+    margin: 0;
+    padding: 60px;
 }
 
 .sidebar {
     position: fixed;
     left: 0;
-    margin-top: 2rem;
+    margin-top: -1.5rem;
     height: calc(100svh - 15rem);
     width: 300px;
     border-top: 1px solid rgb(40, 31, 78);
@@ -38,7 +39,7 @@ body {
     transition: all 0.3s ease-in-out;
     padding-bottom: 2rem;
     scrollbar-width: none;
-    color: #f2f2f2;
+    color: #dadada;
 }
 
 .sidebar-folder {
@@ -78,7 +79,7 @@ body {
     font-family: 'Erode', serif;
     font-size: 1.4rem;
     font-weight: 500;
-    color:solid #f2f2f2 ;
+    color:solid #dadada ;
     text-align: center;
     transform: rotateZ(90deg);
     transition: all 0.1s ease;
@@ -114,7 +115,7 @@ body {
 }
 
 .sidebar .toggle-button svg {
-    fill: white;
+    fill: #dadada;
 }
 
 .sidebar .collapsed .section-title,
@@ -190,7 +191,7 @@ a {
     margin-left: 48px;
     height: 40px;
     font-family: 'Erode', serif;
-    color: #f2f2f2;
+    color: #dadada;
     transition: all 0.2s ease;
 }
 
@@ -254,7 +255,7 @@ a {
 }
 
 .section-name {
-    color: #f2f2f2;
+    color: #dadada;
     font-family: 'Erode', serif;
     font-size: 1.2rem;
 }
@@ -264,7 +265,7 @@ a {
 }
 
 .container-check {
-    --color: #f2f2f2;
+    --color: #dadada;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -275,6 +276,6 @@ a {
 }
 
 .chevron-right {
-    fill: #f2f2f2;
+    fill: #dadada;
 }
 

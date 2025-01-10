@@ -86,8 +86,6 @@ export class AppComponent {
         { id: 'jason', title: 'Jason 1', route: '/spacecrafts-page/69' },
         { id: 'view-all-spacecrafts', title: 'View all...', route: '/spacecrafts' },
 
-
-
         // Add more spacecrafts
       ]
     }
