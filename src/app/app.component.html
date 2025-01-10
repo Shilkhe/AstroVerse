@@ -18,7 +18,19 @@
   </h3>
   <div class="section section-hover section-double">
     <div class="input-container">
-      <input type="text" name="text" placeholder="Search..." class="input">
+      <input type="text" name="text" placeholder="Search..." class="input" (input)="onSearchInput($event)">
+    </div>
+    <!-- Loading indicator -->
+    <div *ngIf="isLoading" class="loading">
+      Searching...
+    </div>
+
+    <!-- Results -->
+    <div class="results-container" *ngIf="searchResults.length > 0">
+      <div class="result-item" *ngFor="let result of searchResults">
+        <div class="result-name" (click)="onClick(result.type, result.id)"> <h1>{{result.name}}</h1></div>
+        <div class="result-type">{{result.type}}</div>
+      </div>
     </div>
   </div>
 </nav>

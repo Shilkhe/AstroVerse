@@ -1,4 +1,4 @@
- import { Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PlanetListComponent } from './components/planets/planets-list/planet-list.component';
 import { MoonsListComponent } from './components/moons/moons-list/moons-list.component';

@@ -1,10 +1,11 @@
 import { Component, ElementRef, Input, QueryList, ViewChildren } from '@angular/core';
 import { RouterModule, RouterOutlet, ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
-import { Subscription } from 'rxjs';
+import { SearchDetails } from './model/search/search-details';
+import { SearchService } from './model/search/search-service';
+import { Subscription, Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
 import { SectionService } from './model/sidebar/sidebar-service';
-
 
 @Component({
   selector: 'app-root',
@@ -12,9 +13,13 @@ import { SectionService } from './model/sidebar/sidebar-service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
 
-  
+  searchResults: SearchDetails[] = [];
+  private searchSubject = new Subject<string>();
+  private searchSubscription?: Subscription;
+  isLoading = false;
   title = 'AstroVerse';
   activeLink: string = ''; // Variable to hold the active link
   authService: any;
@@ -100,11 +105,8 @@ export class AppComponent {
 
   @ViewChildren('pageList') pageLists!: QueryList<ElementRef>;
 
-  constructor(private router: Router, private route: ActivatedRoute, private sectionService: SectionService) {
-    
-
+  constructor(private router: Router, private route: ActivatedRoute, private sectionService: SectionService, private searchService: SearchService) {
   }
-  
 
   toggleSidebar() {
     if (document.getElementsByClassName('no-animation').length > 0) {
@@ -124,8 +126,34 @@ export class AppComponent {
       this.isCollapsed = state;
     });
 
+    this.searchSubscription = this.searchSubject.pipe(
+      debounceTime(500), // Wait 500ms after last input
+      distinctUntilChanged(),
+      filter(query => query.length >= 1) // Only search if query has at least 1 character
+    ).subscribe(query => {
+      this.isLoading = true;
+      const encodedQuery = query.replace(/\s/g, '%20');
+      this.searchService.getSearchDetails(query).subscribe({
+        next: (results: SearchDetails[]) => {
+          this.searchResults = results;
+          this.isLoading = false;
+        },
+        error: (error: any) => {
+          console.error('Search error:', error);
+          this.isLoading = false;
+        }
+      });
+    });
   }
 
+  onSearchInput(event: Event) {
+    const query = (event.target as HTMLInputElement).value;
+    this.searchSubject.next(query);
+  }
+  onClick(type: string, id: number) {
+    this.router.navigate([`/${type}-page/${id}`]);
+  }
+  //planets-page/:id
   contentHeight: string = '0px';
 
   toggleSection(sectionId: string) {
@@ -165,6 +193,5 @@ export class AppComponent {
       this.toggleSidebar();
     }
   }
-
 }
 
