@@ -20,6 +20,6 @@
 
 <div class="pagination-controls">
   <button (click)="prevPage()" [disabled]="page === 0">Previews Page</button>
-  <span> Page {{ page + 1 }} di {{ totalPages }} </span>
+  <span> Page {{ page + 1 }} of {{ totalPages }} </span>
   <button (click)="nextPage()" [disabled]="page >= totalPages - 1">Next Page</button>
 </div>
