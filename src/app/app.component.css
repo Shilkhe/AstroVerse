@@ -16,14 +16,11 @@
 
 .navbar h3.quiz a {
     margin-left: -1px;
-    /* Adjust the value to fix the gap */
 }
 
 .navbar h3.aboutus a {
     margin-left: 0.2px;
 }
-
-
 
 .wiki-button {
   font-size: 40px;
