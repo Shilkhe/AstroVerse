@@ -76,8 +76,18 @@ export class AppComponent {
       id: 'spacecrafts',
       name: 'Spacecrafts',
       pages: [
-        { id: 'hubble', title: 'Hubble Space Telescope', route: '/wiki/spacecrafts/hubble' },
-        { id: 'iss', title: 'International Space Station', route: '/wiki/spacecrafts/iss' },
+        { id: 'voyager1', title: 'Voyager 1', route: '/spacecrafts-page/170' },
+        { id: 'voyager2', title: 'Voyager 2', route: '/spacecrafts-page/171' },
+        { id: 'iss', title: 'ISS', route: '/spacecrafts-page/64' },
+        { id: 'hubble', title: 'Hubble', route: '/spacecrafts-page/58' },
+        { id: 'james-webb', title: 'James Webb Telescope', route: '/spacecrafts-page/68' },
+        { id: 'juno', title: 'Juno', route: '/spacecrafts-page/73' },
+        { id: 'mars-odyssey', title: 'Mars Odyssey', route: '/spacecrafts-page/91' },
+        { id: 'jason', title: 'Jason 1', route: '/spacecrafts-page/69' },
+        { id: 'view-all-spacecrafts', title: 'View all...', route: '/spacecrafts' },
+
+
+
         // Add more spacecrafts
       ]
     }

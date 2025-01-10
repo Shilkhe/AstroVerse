@@ -40,7 +40,7 @@ img {
   text-decoration: none;
   padding: 34.5px 128px;
   background-color: transparent;
-  color: white;
+  color: #f2f2f2;
   position: relative;
   overflow: hidden;
   transition: color 0.3s ease-in-out;
@@ -62,11 +62,6 @@ img {
 
 .navbar h3 a.active::before {
   transform: scaleY(1);
-}
-
-.navbar h1,
-.navbar h3 {
-  color: white;
 }
 
 .input-container {
@@ -124,7 +119,7 @@ body {
 
 .input::placeholder {
   font-family: Erode, sans-serif;
-  color: #ffffff;
+  color: #f2f2f2;
   letter-spacing: 0.5px;
 }
 

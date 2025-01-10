@@ -65,6 +65,7 @@ body {
     border-top: 1px solid rgb(40, 31, 78);
     border-bottom: 1px rgb(40, 31, 78);
 
+
     @media screen and (max-width: 768px) {
         top: 50%;
         right: -31px;
@@ -89,9 +90,10 @@ body {
 }
 
 .sidebar-folder:hover {
-    border-right: 1px solid rgb(40, 31, 78);
-    border-top: 1px solid rgb(40, 31, 78);
-    border-bottom: 1px rgb(40, 31, 78);
+    border-right: 1px solid rgb(74, 53, 148);
+    border-top: 1px solid rgb(74, 53, 148);
+    border-bottom: 1px rgb(74, 53, 148);
+    cursor: pointer;
 }
 
 .sidebar.collapsed {
@@ -255,6 +257,10 @@ a {
     color: #f2f2f2;
     font-family: 'Erode', serif;
     font-size: 1.2rem;
+}
+
+.section-name:hover{
+    cursor: pointer;
 }
 
 .container-check {
