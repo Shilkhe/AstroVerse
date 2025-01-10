@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { QuizResultDetails } from '../../../model/quiz/quiz-result-datails';
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
+import {QuizResultDetails} from '../../../model/quiz/quiz-result-datails';
 
 @Component({
   selector: 'app-quiz-end',
   templateUrl: './quiz-end.component.html',
-  styleUrls: ['./quiz-end.component.css']  
+  styleUrls: ['./quiz-end.component.css']
 })
 export class QuizEndComponent {
   totalQuestion: number = 0;
   corectAnswer: number = 0;
-  navigationState: QuizResultDetails; 
+  navigationState: QuizResultDetails;
   endText: string | null = null;
 
   constructor(private router: Router) {

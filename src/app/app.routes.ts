@@ -11,7 +11,6 @@ import { RandomfactComponent } from './components/randomfact/randomfact.componen
 import { QuizComponent } from './components/quiz/quiz.component';
 import { QuizStartComponent } from './components/quiz/quiz-start/quiz-start.component';
 import { QuizEndComponent } from './components/quiz/quiz-end/quiz-end.component';
-import { Component } from '@angular/core';
 import { PlanetPageComponent } from './components/planets/planets-page/planets-page.component';
 import { MoonsPageComponent } from './components/moons/moons-page/moons-page.component';
 import { StarsPageComponent } from './components/stars/stars-page/stars-page.component';
@@ -19,21 +18,21 @@ import { MissionsPageComponent } from './components/missions/missions-page/missi
 import { SpacecraftsPageComponent } from './components/spacecrafts/spacecrafts-page/spacecrafts-page.component';
 
 export const routes: Routes = [
-    {path: '', component:HomeComponent},
-    {path: 'planets', component:PlanetListComponent},
-    {path: 'stars', component:StarsListComponent},
-    {path: 'moons', component:MoonsListComponent},
-    {path: 'spacecrafts', component:SpacecraftsListComponent},
-    {path: 'missions', component:MissionsListComponent},
-    {path: 'facts', component:FactsListComponent},
-    {path: 'members', component:MembersComponent},
-    {path: 'randomFact', component:RandomfactComponent},
-    {path: 'quiz', component:QuizComponent},
-    {path: 'quiz-start', component:QuizStartComponent},
-    {path: 'quiz-end', component:QuizEndComponent},
-    {path: 'planets-page/:id', component:PlanetPageComponent},
-    {path: 'moons-page/:id', component:MoonsPageComponent},
-    {path: 'stars-page/:id', component:StarsPageComponent},
-    {path: 'missions-page/:id', component: MissionsPageComponent}, 
-    {path: 'spacecrafts-page/:id', component: SpacecraftsPageComponent}
+  { path: '', component: HomeComponent },
+  { path: 'planets', component: PlanetListComponent },
+  { path: 'stars', component: StarsListComponent },
+  { path: 'moons', component: MoonsListComponent },
+  { path: 'spacecrafts', component: SpacecraftsListComponent },
+  { path: 'missions', component: MissionsListComponent },
+  { path: 'facts', component: FactsListComponent },
+  { path: 'members', component: MembersComponent },
+  { path: 'randomFact', component: RandomfactComponent },
+  { path: 'quiz', component: QuizComponent },
+  { path: 'quiz-start', component: QuizStartComponent },
+  { path: 'quiz-end', component: QuizEndComponent },
+  { path: 'planets-page/:id', component: PlanetPageComponent },
+  { path: 'moons-page/:id', component: MoonsPageComponent },
+  { path: 'stars-page/:id', component: StarsPageComponent },
+  { path: 'missions-page/:id', component: MissionsPageComponent },
+  { path: 'spacecrafts-page/:id', component: SpacecraftsPageComponent }
 ];

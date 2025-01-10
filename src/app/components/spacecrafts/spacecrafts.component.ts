@@ -1,6 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { SpacecraftDetails } from '../../model/spacecrafts/spacecraft-details';
-
 @Component({
   selector: 'app-spacecrafts',
   imports: [],
@@ -9,9 +8,8 @@ import { SpacecraftDetails } from '../../model/spacecrafts/spacecraft-details';
   encapsulation: ViewEncapsulation.None
 })
 export class SpacecraftsComponent {
-   @Input({
-      required: true
-    })
-    spacecraft: SpacecraftDetails | null = null;
-  }
-
+  @Input({
+    required: true
+  })
+  spacecraft: SpacecraftDetails | null = null;
+}

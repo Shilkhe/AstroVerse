@@ -1,4 +1,4 @@
-export interface MissionDetails{
+export interface MissionDetails {
     id: number;
     name: string;
     launchDate: string;
@@ -8,4 +8,3 @@ export interface MissionDetails{
     description: string;
     image: string;
 }
-

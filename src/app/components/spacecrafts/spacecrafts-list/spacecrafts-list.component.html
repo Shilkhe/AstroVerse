@@ -1,19 +1,11 @@
-<!-- @if(spacecraftDetails){
-    <div id="spacecraftCard">
-        @for(spacecraft of spacecraftDetails; track $index){
-            <app-spacecrafts [spacecraft]="spacecraft"></app-spacecrafts>
-        }     
-    </div>
-}
- -->
- @if (spacecraftDetails) {
-    <div id="factCard">
-        @for (spacecraft of spacecraftDetails; track spacecraft) {
-            <app-spacecrafts [spacecraft]="spacecraft" (click)="getSpacecrafts(spacecraft.id)"></app-spacecrafts>
-        }
-    </div>
+@if (spacecraftDetails) {
+  <div id="factCard">
+    @for (spacecraft of spacecraftDetails; track spacecraft) {
+      <app-spacecrafts [spacecraft]="spacecraft" (click)="getSpacecrafts(spacecraft.id)"></app-spacecrafts>
+    }
+  </div>
 } @else {
-    <p>Nessun dato disponibile.</p>
+  <p>Nessun dato disponibile.</p>
 }
 <button (click)="prevPage()" [disabled]="page === 0">Pagina Precedente</button>
 <span> Pagina {{ page + 1 }} di {{ totalPages }} </span>

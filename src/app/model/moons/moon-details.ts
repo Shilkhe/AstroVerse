@@ -1,4 +1,4 @@
-export interface MoonDetails{
+export interface MoonDetails {
     id: number;
     name: string;
     mass: number;
@@ -12,4 +12,3 @@ export interface MoonDetails{
     description: string;
     image: string;
 }
-

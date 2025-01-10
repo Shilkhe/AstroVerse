@@ -17,9 +17,8 @@ export class AppComponent {
   activeLink: string = ''; // Variable to hold the active link
   authService: any;
 
-  // Method to set the active link
-  setActiveLink(link: string): void {
-    this.activeLink = link;
+  setActiveLink(link:string):void {
+    this.activeLink=link;
   }
 
 

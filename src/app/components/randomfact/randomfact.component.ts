@@ -11,26 +11,15 @@ import { RouterModule } from '@angular/router';
   templateUrl: './randomfact.component.html',
   styleUrl: './randomfact.component.css'
 })
-export class RandomfactComponent implements OnInit{
-  @Input({
-    required: true
-  })
-  fact: FactDetails | null = null;
-  
+export class RandomfactComponent implements OnInit {
+  @Input({ required: true }) fact: FactDetails | null = null;
   factDetail!: FactDetails;
 
-  constructor(private factService: FactService){}
+  constructor(private factService: FactService) {}
 
-  /*ngOnInit(): void {
-    let opd: Observable<FactDetails> = this.factService.getRandomFact();
-      opd.subscribe({
-      next: sts => this.factDetail = sts,
-      error: err => console.log(err)
-    });
-  }*/
- ngOnInit(): void {
+  ngOnInit(): void {
     if (this.fact) {
-      this.factDetail = this.fact;  // Puoi assegnare direttamente o chiamare getRandomFact()
+      this.factDetail = this.fact;
     } else {
       this.factService.getRandomFact().subscribe({
         next: sts => this.factDetail = sts,

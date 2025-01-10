@@ -8,13 +8,12 @@ import { StarDetails } from "./star-details";
     providedIn: 'root'
 })
 export class StarService{
-    private urlExtension: string = "api/stars";
-    constructor(private http: HttpClient){}
-
-    getStarDetails(): Observable<StarDetails[]> {
+    private urlExtension:string="api/stars";
+    constructor(private http:HttpClient){}
+    getStarDetails():Observable<StarDetails[]>{
         return this.http.get<StarDetails[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
     }
-    getStarById(id: number): Observable<StarDetails> {
+    getStarById(id:number):Observable<StarDetails>{
         return this.http.get<StarDetails>(`${HttpConfig.apiUrl}${this.urlExtension}/${id}`);
     }
 }

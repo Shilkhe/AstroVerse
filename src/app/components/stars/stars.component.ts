@@ -9,8 +9,8 @@ import { StarDetails } from '../../model/stars/star-details';
   encapsulation: ViewEncapsulation.None
 })
 export class StarsComponent {
-   @Input({
-        required: true
-      })
-      star: StarDetails | null = null;
+  @Input({
+    required: true
+  })
+  star: StarDetails | null = null;
 }

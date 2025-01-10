@@ -12,5 +12,3 @@ export interface PlanetDetails{
     description: string;
     image: string;
 }
-
-//qui manca id della stella in caso si volesse mettere.

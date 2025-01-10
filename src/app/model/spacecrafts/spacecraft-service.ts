@@ -8,16 +8,12 @@ import { SpacecraftDetails } from "./spacecraft-details";
     providedIn: 'root'
 })
 export class SpacecraftService{
-    private urlExtension: string = "api/spacecrafts";
-    constructor(private http: HttpClient){}
-
-    // getSpacecraftDetails(): Observable<SpacecraftDetails[]> {
-    //     return this.http.get<SpacecraftDetails[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
-    // }
-    getSpacecraftDetails(page: number, size: number): Observable<any> {
+    private urlExtension:string="api/spacecrafts";
+    constructor(private http:HttpClient){}
+    getSpacecraftDetails(page:number,size:number):Observable<any>{
         return this.http.get<any>(`${HttpConfig.apiUrl}${this.urlExtension}?page=${page}&size=${size}`);
     }
-    getSpacecraftById(id: number): Observable<SpacecraftDetails> {
-                return this.http.get<SpacecraftDetails>(`${HttpConfig.apiUrl}${this.urlExtension}/${id}`);
-            }
+    getSpacecraftById(id:number):Observable<SpacecraftDetails>{
+        return this.http.get<SpacecraftDetails>(`${HttpConfig.apiUrl}${this.urlExtension}/${id}`);
+    }
 }

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RandomfactComponent } from './randomfact.component';
 
 describe('RandomfactComponent', () => {
@@ -9,8 +8,7 @@ describe('RandomfactComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RandomfactComponent]
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RandomfactComponent);
     component = fixture.componentInstance;
