@@ -32,7 +32,7 @@
     <div *ngFor="let section of sections">
       <div [ngClass]="isExpanded(section.id) ? 'section-title-selected' : ''" (click)="toggleSection(section.id)"
         class="section-title">
-        <div class="flex row" style="justify-content: start; align-items: center; gap: 8px;">
+        <div class="section-header">
           <label class="container-check" [style.rotate]="isExpanded(section.id) ? '90deg' : '0deg'">
             <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="chevron-right">
               <path fill="#f2f2f2"
@@ -58,12 +58,4 @@
 
 
 
-
-  
-
-<!-- <li><a routerLink="/planets">Planets</a></li>
-<li><a routerLink="/moons">Moons</a></li>
-<li><a routerLink="/stars">Stars</a></li>
-<li><a routerLink="/missions">Missions</a></li>
-<li><a routerLink="/spacecrafts">Spacecrafts</a></li> -->
 <router-outlet></router-outlet>

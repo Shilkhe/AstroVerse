@@ -13,6 +13,8 @@ import { SectionService } from './model/sidebar/sidebar-service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  
   title = 'AstroVerse';
   activeLink: string = ''; // Variable to hold the active link
   authService: any;
@@ -21,14 +23,12 @@ export class AppComponent {
     this.activeLink=link;
   }
 
-
   sections = [
     {
       id: 'stars',
       name: 'Stars',
       pages: [
-        { id: 'sun', title: 'Sun', route: '/wiki/stars/sun' },
-        { id: 'proxima-centauri', title: 'Proxima Centauri', route: '/wiki/stars/proxima-centauri' },
+        { id: 'sun', title: 'Sun', route: '/stars-page/1' },
         // Add more star pages as needed
       ]
     },
@@ -36,18 +36,30 @@ export class AppComponent {
       id: 'planets',
       name: 'Planets',
       pages: [
-        { id: 'mercury', title: 'Mercury', route: '/wiki/planets/mercury' },
-        { id: 'venus', title: 'Venus', route: '/wiki/planets/venus' },
-        { id: 'earth', title: 'Earth', route: '/wiki/planets/earth' },
-        // Add more planets
+        { id: 'mercury', title: 'Mercury', route: '/planets-page/1' },
+        { id: 'venus', title: 'Venus', route: '/planets-page/2' },
+        { id: 'earth', title: 'Earth', route: '/planets-page/3' },
+        { id: 'mars', title: 'Mars', route: '/planets-page/4' },
+        { id: 'jupiter', title: 'Jupiter', route: '/planets-page/5' },
+        { id: 'saturn', title: 'Saturn', route: '/planets-page/6' },
+        { id: 'uranus', title: 'Uranus', route: '/planets-page/7' },
+        { id: 'neptune', title: 'Neptune', route: '/planets-page/8' },
+        { id: 'view-all-planets', title: 'View all...', route: '/planets' },
       ]
     },
     {
       id: 'moons',
       name: 'Moons',
       pages: [
-        { id: 'luna', title: 'Luna', route: '/wiki/moons/luna' },
-        { id: 'titan', title: 'Titan', route: '/wiki/moons/titan' },
+        { id: 'moon', title: 'Moon', route: '/moons-page/1' },
+        { id: 'titan', title: 'Titan', route: '/moons-page/8' },
+        { id: 'europa', title: 'Europa', route: '/moons-page/5' },
+        { id: 'io', title: 'Io', route: '/moons-page/4' },
+        { id: 'ganymede', title: 'Ganymede', route: '/moons-page/6' },
+        { id: 'amalthea', title: 'Amalthea', route: '/moons-page/11' },
+        { id: 'dione', title: 'Dione', route: '/moons-page/17' },
+        { id: 'hyperion', title: 'Hyperion', route: '/moons-page/19' },
+        { id: 'view-all-moons', title: 'View all...', route: '/moons' },
         // Add more moons
       ]
     },
@@ -80,13 +92,11 @@ export class AppComponent {
 
   @ViewChildren('pageList') pageLists!: QueryList<ElementRef>;
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private sectionService: SectionService
-  ) {
+  constructor(private router: Router, private route: ActivatedRoute, private sectionService: SectionService) {
+    
 
   }
+  
 
   toggleSidebar() {
     if (document.getElementsByClassName('no-animation').length > 0) {
@@ -105,11 +115,6 @@ export class AppComponent {
     this.sidebarSubscription = this.sectionService.sidebarState$.subscribe((state) => {
       this.isCollapsed = state;
     });
-
-    // Caricamento iniziale
-
-   
-
 
   }
 

@@ -32,7 +32,9 @@ body {
     border-bottom: 1px solid rgb(74, 53, 148);
     border-radius: 0 24px 24px 0;
     z-index: 200;
-    background: rgb(49, 37, 94);
+    /* background: radial-gradient(ellipse at top, rgb(49,38,96)); */
+    background: radial-gradient(ellipse at right, rgb(49, 38, 96), transparent 140%),
+                radial-gradient(ellipse at left, rgb(49, 38, 96), transparent 140%);
     box-shadow: 0 0px 30px var(--box);
     transition: all 0.3s ease-in-out;
     padding-bottom: 2rem;
@@ -138,7 +140,7 @@ h5 {
 
 .section-title,
 .section-button {
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgb(74, 53, 148);
     /* cursor: pointer; */
     padding: 10px;
     font-size: 1.2rem;
@@ -148,20 +150,20 @@ h5 {
 }
 
 .section-title {
-    border-right: 1px solid transparent;
+    border-right: 1px rgb(74, 53, 148);
     color: var(--current-color);
 }
 
 .section-title:hover {
-    border-bottom: 1px solid var(--current-color);
+    border-bottom: 1px solid rgb(74, 53, 148);
 }
 
 .section-title-selected {
-    border-bottom: 1px dashed var(--current-color) !important;
+    border-bottom: 1px solid rgb(74, 53, 148) !important;
 }
 
 .section-title-selected:hover {
-    border-bottom: 1px solid var(--current-color) !important;
+    border-bottom: 1px solid rgb(74, 53, 148) !important;
 }
 
 .page-list {
@@ -243,15 +245,21 @@ a {
     transition: all 0.5s ease;
 }
 
-.section-title {
-    /* existing styles */
+.section-header {
     display: flex;
     align-items: center;
+    gap: 8px;
+    padding: 8px;
+}
+
+.section-name {
+    color: #f2f2f2;
+    font-family: 'Erode', serif;
+    font-size: 1.2rem;
 }
 
 .container-check {
     --color: #f2f2f2;
-    /* Changed to white */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -263,17 +271,5 @@ a {
 
 .chevron-right {
     fill: #f2f2f2;
-    /* Makes the arrow white */
 }
 
-.section-name {
-    color: #f2f2f2;
-    font-family: 'Erode', serif;
-    font-size: 1.2rem;
-    margin-left: 4px;
-}
-
-/* Remove the h5 styles since we're not using it anymore */
-h5 {
-    display: none;
-}
