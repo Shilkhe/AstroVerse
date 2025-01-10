@@ -33,8 +33,8 @@ body {
     border-bottom: 1px solid rgb(40, 31, 78);
     border-radius: 0 24px 24px 0;
     z-index: 200;
-    background: radial-gradient(ellipse at right,rgba(41, 30, 65, 0.452), transparent 140%),
-                radial-gradient(ellipse at left, rgba(41, 30, 65, 0.452), transparent 140%);
+    background: radial-gradient(ellipse at right,rgba(41, 30, 65, 0.452), transparent 200%),
+                radial-gradient(ellipse at left, rgba(41, 30, 65, 0.452), transparent 200%);
     box-shadow: 0 0px 30px var(--box);
     transition: all 0.3s ease-in-out;
     padding-bottom: 2rem;
@@ -121,7 +121,6 @@ body {
 .sidebar .collapsed .section-title,
 .sidebar .collapsed .page-list {
     display: none;
-    /* Nasconde i titoli delle sezioni e le liste di pagine quando ristretta */
 }
 
 h5 {
@@ -132,7 +131,6 @@ h5 {
     color: var(--current-color);
     font-weight: 400;
 }
-
 
 .button {
     font-size: 1.2rem;
