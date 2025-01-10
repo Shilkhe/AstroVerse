@@ -148,7 +148,11 @@ export class AppComponent {
 
   navigateToPage(page: any, event: Event) {
     event.stopPropagation();
-    this.router.navigate([page.route]);
+    // Force navigation even if it's the same route
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+      this.router.navigate([page.route]);
+    });
+    
     if (window.innerWidth < 768) {
       this.toggleSidebar();
     }

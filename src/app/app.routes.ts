@@ -18,6 +18,11 @@ import { MissionsPageComponent } from './components/missions/missions-page/missi
 import { SpacecraftsPageComponent } from './components/spacecrafts/spacecrafts-page/spacecrafts-page.component';
 
 export const routes: Routes = [
+  { path: 'planets-page/:id', component: PlanetPageComponent },
+  { path: 'moons-page/:id', component: MoonsPageComponent },
+  { path: 'stars-page/:id', component: StarsPageComponent },
+  { path: 'missions-page/:id', component: MissionsPageComponent },
+  { path: 'spacecrafts-page/:id', component: SpacecraftsPageComponent },
   { path: '', component: HomeComponent },
   { path: 'planets', component: PlanetListComponent },
   { path: 'stars', component: StarsListComponent },
@@ -30,9 +35,4 @@ export const routes: Routes = [
   { path: 'quiz', component: QuizComponent },
   { path: 'quiz-start', component: QuizStartComponent },
   { path: 'quiz-end', component: QuizEndComponent },
-  { path: 'planets-page/:id', component: PlanetPageComponent },
-  { path: 'moons-page/:id', component: MoonsPageComponent },
-  { path: 'stars-page/:id', component: StarsPageComponent },
-  { path: 'missions-page/:id', component: MissionsPageComponent },
-  { path: 'spacecrafts-page/:id', component: SpacecraftsPageComponent }
 ];
