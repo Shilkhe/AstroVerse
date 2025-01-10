@@ -1,7 +1,7 @@
 <div>
-  <label for="category-select">Filtra per categoria:</label>
+  <label for="category-select">Filter by category:</label>
   <select id="category-select" (change)="onCategoryChange($event)">
-    <option value="">Tutte</option>
+    <option value="">All</option>
     <option *ngFor="let category of categories" [value]="category">
       {{ category }}
     </option>
