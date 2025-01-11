@@ -12,6 +12,40 @@
   color: #ffffff;
 }
 
+/* New layout for image and content side by side */
+.moon-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+}
+
+/* Image styles */
+.moon-image-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid #a8a8ff; /* Added border matching the dt color */
+  box-shadow: 0 0 10px rgba(168, 168, 255, 0.3); /* Added subtle glow effect */
+}
+
+.moon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a8a8ff;
+  font-style: italic;
+}
+
 .moon-info dl {
   display: grid;
   grid-template-columns: 150px 1fr;
@@ -36,11 +70,19 @@
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
+  .moon-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .moon-image-container {
+    height: 200px;
+  }
+
   .moon-info dl {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-  
+
   .moon-info dt {
     margin-top: 15px;
   }

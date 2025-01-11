@@ -10,5 +10,5 @@ export interface PlanetDetails{
     atmosphere: string;
     hasRingSystem: boolean;
     description: string;
-    image: string;
+    imageUrl: string;
 }
