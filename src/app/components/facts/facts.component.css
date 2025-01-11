@@ -50,7 +50,7 @@ article {
 }
 
 #fact::before {
-  content: "🚀🚀🚀";
+  content: "🚀";
   position: absolute;
   font-size: 40px;
   animation: rocket 4s linear infinite;
