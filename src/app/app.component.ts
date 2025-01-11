@@ -138,7 +138,7 @@ export class AppComponent {
     ).subscribe(query => {
       this.isLoading = true;
       const encodedQuery = query.replace(/\s/g, '%20');
-      this.searchService.getSearchDetails(query).subscribe({
+      this.searchService.getSearchDetails(encodedQuery).subscribe({
         next: (results: SearchDetails[]) => {
           this.searchResults = results;
           this.isLoading = false;
