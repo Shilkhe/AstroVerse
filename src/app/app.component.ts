@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnDestroy, QueryList, ViewChildren } from '@angular/core';
-import { RouterModule, RouterOutlet, ActivatedRoute, Router, NavigationEnd, NavigationEnd } from '@angular/router';
+import { RouterModule, RouterOutlet, ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SearchDetails } from './model/search/search-details';
 import { SearchService } from './model/search/search-service';
