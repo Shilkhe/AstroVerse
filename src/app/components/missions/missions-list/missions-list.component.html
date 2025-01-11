@@ -1,5 +1,5 @@
 @if (missionDetails) {
-  <div id="factCard">
+  <div id="missionsCard">
     @for (mission of missionDetails; track mission) {
       <app-missions [mission]="mission" (click)="getMission(mission.id)"></app-missions>
     }
