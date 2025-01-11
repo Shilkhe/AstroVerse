@@ -35,7 +35,7 @@ select:hover {
   box-shadow: 0 0 10px rgba(40, 31, 78, 0.2);
 }
 
-/* Facts grid */
+/* Spacecraft grid */
 #factCard {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -89,6 +89,36 @@ p {
   font-family: 'Orbitron', sans-serif;
 }
 
+/* Spacecraft card styles */
+app-spacecrafts {
+  animation: fadeIn 0.5s ease-out;
+  display: block;
+  background: rgba(23, 18, 40, 0.9);
+  border: 1px solid rgba(40, 31, 78, 0.3);
+  border-radius: 8px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+app-spacecrafts:hover {
+  border-color: rgba(74, 53, 148, 0.6);
+  box-shadow: 0 0 15px rgba(40, 31, 78, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Animation for new cards */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
   #factCard {
@@ -106,19 +136,12 @@ p {
   }
 }
 
-/* Animation for new cards */
-app-facts {
-  animation: fadeIn 0.5s ease-out;
-  display: block;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@media screen and (max-width: 480px) {
+  :host {
+    padding: 10px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  #factCard {
+    gap: 15px;
   }
 }

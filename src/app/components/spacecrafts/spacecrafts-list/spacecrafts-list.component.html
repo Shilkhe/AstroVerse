@@ -1,5 +1,5 @@
 @if (spacecraftDetails) {
-  <div id="factCard">
+  <div id="spacecraftCard">
     @for (spacecraft of spacecraftDetails; track spacecraft) {
       <app-spacecrafts [spacecraft]="spacecraft" (click)="getSpacecrafts(spacecraft.id)"></app-spacecrafts>
     }
@@ -7,6 +7,8 @@
 } @else {
   <p>Nessun dato disponibile.</p>
 }
-<button (click)="prevPage()" [disabled]="page === 0">Pagina Precedente</button>
-<span> Pagina {{ page + 1 }} di {{ totalPages }} </span>
-<button (click)="nextPage()" [disabled]="page >= totalPages - 1">Pagina Successiva</button>
+<div class="pagination-controls">
+  <button (click)="prevPage()" [disabled]="page === 0">Pagina Precedente</button>
+  <span> Pagina {{ page + 1 }} di {{ totalPages }} </span>
+  <button (click)="nextPage()" [disabled]="page >= totalPages - 1">Pagina Successiva</button>
+</div>
