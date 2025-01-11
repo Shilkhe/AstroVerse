@@ -1,66 +1,105 @@
-body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  background-color: #121212;
-  color: #d1d1d1;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+.page-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
-.planet-details {
-  background-color: #2a2a2a;
-  padding: 20px;
-  margin: 30px auto;
-  max-width: 900px;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+
+.spacecraft-page {
+  position: relative;
+  width: clamp(300px, 90%, 1500px);
+  background: rgb(23, 18, 40);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  padding: clamp(15px, 2vw, 20px);
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(5px);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    margin 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: clamp(10px, 2vh, 20px) auto;
+  flex: 1;
+  margin-top: -64px;
+  padding: 40px;
+  padding-top: 20px;
 }
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #ffffff;
-  font-weight: bold;
+
+.content {
+  padding: clamp(20px, 4vw, 40px);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.planet-details p {
-  font-size: 1.2em;
-  margin-bottom: 15px;
-  color: #d1d1d1;
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 250px;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
 }
-.planet-details strong {
-  color: #f39c12;
+
+.sidebar-open .sidebar {
+  transform: translateX(0);
 }
-figure {
-  margin: 30px 0;
-  text-align: center;
+
+.sidebar-open .spacecraft-page {
+  width: calc(90% - 250px);
+  margin-left: 250px;
 }
-iframe {
-  width: 100%;
-  height: 500px;
-  border-radius: 8px;
-  border: 2px solid #16a085;
-}
-ng-template#errorTemplate p {
-  color: #e74c3c;
-  font-size: 1.4em;
-  text-align: center;
-  font-weight: bold;
-}
-a {
-  color: #3498db;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-@media (max-width: 768px) {
-  .planet-details {
-    padding: 15px;
-    margin: 10px;
-  }
-  iframe {
-    height: 300px;
+
+
+@media screen and (max-width: 1024px) {
+  .sidebar-open .spacecraft-page {
+    width: calc(95% - 250px);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar-open .spacecraft-page {
+    width: calc(98% - 200px);
+    margin-left: 200px;
+  }
+}
+
+.spacecraft-page h1 {
+  font-size: 40px;
+}
+
+.spacecraft-page h2 {
+  font-size: 30px;
+}
+
+.spacecraft-page p {
+  font-size: 18px;
+  margin-top: 1px;
+}
+
+.spacecraft-page hr {
+  border: none;
+  border-top: 1px solid #ffffff;
+  margin: 20px 0;
+  margin-top: -29px;
+  opacity: 0.3;
+}
+
+#hrh2 {
+  border: none;
+  border-top: 1px solid #ffffff;
+  margin: 20px 0;
+  margin-top: -16px;
+  opacity: 0.3;
+}
+
 .smd-iframe-iframe {
   width: 100%;
   height: 500px;

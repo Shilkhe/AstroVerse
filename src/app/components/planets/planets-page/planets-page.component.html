@@ -1,29 +1,31 @@
-<div *ngIf="planet; else errorTemplate" class="planet-details">
-  <h1>{{ planet.name }}</h1>
-  <p><strong>Mass:</strong> {{ planet.mass }} kg</p>
-  <p><strong>Radius:</strong> {{ planet.radius }} km</p>
-  <p><strong>Distance from Star:</strong> {{ planet.starDistance }} AU</p>
-  <p><strong>Orbital Period:</strong> {{ planet.orbitalPeriod }} days</p>
-  <p><strong>Discovery Date:</strong> {{ planet.discoveryDate }}</p>
-  <p><strong>Discovered By:</strong> {{ planet.discoveredBy }}</p>
-  <p><strong>Atmosphere:</strong> {{ planet.atmosphere }}</p>
-  <p><strong>Has Ring System:</strong> {{ planet.hasRingSystem ? 'Yes' : 'No' }}</p>
-  <p><strong>Description:</strong> {{ planet.description }}</p>
-  <p><strong>Image:</strong> {{ planet.image }}</p>
-</div>
+<section class="content">
+  <div class="planet-page">
+    <div *ngIf="planet; else errorTemplate" class="planet-details">
+      <h1>{{ planet.name }}</h1>
+      <hr>
+      <p><strong>Mass:</strong> {{ planet.mass }} kg</p>
+      <p><strong>Radius:</strong> {{ planet.radius }} km</p>
+      <p><strong>Distance from Star:</strong> {{ planet.starDistance }} AU</p>
+      <p><strong>Orbital Period:</strong> {{ planet.orbitalPeriod }} days</p>
+      <p><strong>Discovery Date:</strong> {{ planet.discoveryDate }}</p>
+      <p><strong>Discovered By:</strong> {{ planet.discoveredBy }}</p>
+      <p><strong>Atmosphere:</strong> {{ planet.atmosphere }}</p>
+      <p><strong>Has Ring System:</strong> {{ planet.hasRingSystem ? 'Yes' : 'No' }}</p>
+      <p><strong>Description:</strong> {{ planet.description }}</p>
+      <p><strong>Image:</strong> {{ planet.image }}</p>
+    </div>
+    
+    <figure>
+      <span>
+        <iframe *ngIf="iframeUrl" [src]="iframeUrl" title="Solar System" class="smd-iframe-iframe border-0"
+          allow="fullscreen">
+        </iframe>
+      </span>
+    </figure>
+    
+    <ng-template #errorTemplate>
+      <p *ngIf="errorMessage">{{ errorMessage }}</p>
+    </ng-template>
+  </div>
+</section>
 
-<figure>
-  <span>
-    <iframe 
-      *ngIf="iframeUrl"
-      [src]="iframeUrl"
-      title="Solar System" 
-      class="smd-iframe-iframe border-0" 
-      allow="fullscreen">
-    </iframe>
-  </span>
-</figure>
-
-<ng-template #errorTemplate>
-  <p *ngIf="errorMessage">{{ errorMessage }}</p>
-</ng-template>

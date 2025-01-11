@@ -1,18 +1,106 @@
-.planet-details{
-  padding:1rem;
-  border:1px solid #ddd;
-  border-radius:8px;
-  max-width:600px;
-  margin:auto;
+.page-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
-h1{
-  color:#2c3e50;
+
+.moon-page {
+  position: relative;
+  width: clamp(300px, 90%, 1500px);
+  background: rgb(23, 18, 40);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  padding: clamp(15px, 2vw, 20px);
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(5px);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    margin 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: clamp(10px, 2vh, 20px) auto;
+  flex: 1;
+  margin-top: -64px;
+  padding: 40px;
+  padding-top: 20px;
 }
-p{
-  font-size:1rem;
-  line-height:1.5;
+
+.content {
+  padding: clamp(20px, 4vw, 40px);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.smd-iframe-iframe{
-  width:100%;
-  height:500px;
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 250px;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+}
+
+.sidebar-open .sidebar {
+  transform: translateX(0);
+}
+
+.sidebar-open .moon-page {
+  width: calc(90% - 250px);
+  margin-left: 250px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .sidebar-open .moon-page {
+    width: calc(95% - 250px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar-open .moon-page {
+    width: calc(98% - 200px);
+    margin-left: 200px;
+  }
+}
+
+.moon-page h1 {
+  font-size: 40px;
+}
+
+.moon-page h2 {
+  font-size: 30px;
+}
+
+.moon-page p {
+  font-size: 18px;
+  margin-top: 1px;
+}
+
+.moon-page hr {
+  border: none;
+  border-top: 1px solid #ffffff;
+  margin: 20px 0;
+  margin-top: -29px;
+  opacity: 0.3;
+}
+
+#hrh2 {
+  border: none;
+  border-top: 1px solid #ffffff;
+  margin: 20px 0;
+  margin-top: -16px;
+  opacity: 0.3;
+}
+
+.smd-iframe-iframe {
+  width: 100%;
+  height: 500px;
 }

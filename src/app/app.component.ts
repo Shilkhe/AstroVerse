@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, QueryList, ViewChildren } from '@angular/core';
-import { RouterModule, RouterOutlet, ActivatedRoute, Router } from '@angular/router';
+import { RouterModule, RouterOutlet, ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SearchDetails } from './model/search/search-details';
 import { SearchService } from './model/search/search-service';
@@ -106,6 +106,11 @@ export class AppComponent {
   @ViewChildren('pageList') pageLists!: QueryList<ElementRef>;
 
   constructor(private router: Router, private route: ActivatedRoute, private sectionService: SectionService, private searchService: SearchService) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+      }
+    });
   }
 
   toggleSidebar() {
