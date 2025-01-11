@@ -1,10 +1,10 @@
-import { Component, ElementRef, Input, QueryList, ViewChildren } from '@angular/core';
-import { RouterModule, RouterOutlet, ActivatedRoute, Router } from '@angular/router';
+import { Component, ElementRef, Input, OnDestroy, QueryList, ViewChildren } from '@angular/core';
+import { RouterModule, RouterOutlet, ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SearchDetails } from './model/search/search-details';
 import { SearchService } from './model/search/search-service';
 import { Subscription, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, takeUntil } from 'rxjs/operators';
 import { SectionService } from './model/sidebar/sidebar-service';
 
 @Component({
@@ -14,7 +14,7 @@ import { SectionService } from './model/sidebar/sidebar-service';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnDestroy{
 
   searchResults: SearchDetails[] = [];
   private searchSubject = new Subject<string>();
@@ -100,6 +100,7 @@ export class AppComponent {
   isCollapsed: boolean = false;
   sidebarSubscription: Subscription | undefined;
   currentVersion: string | null = null;
+  private destroy$ = new Subject<void>();
 
   @Input() canEditPage: boolean = true;
 
@@ -126,10 +127,12 @@ export class AppComponent {
       this.isCollapsed = state;
     });
 
-    this.searchSubscription = this.searchSubject.pipe(
-      debounceTime(500), // Wait 500ms after last input
+     // Subscribe to search input changes
+     this.searchSubject.pipe(
+      takeUntil(this.destroy$),
+      debounceTime(500),
       distinctUntilChanged(),
-      filter(query => query.length >= 1) // Only search if query has at least 1 character
+      filter(query => query.length >= 1)
     ).subscribe(query => {
       this.isLoading = true;
       const encodedQuery = query.replace(/\s/g, '%20');
@@ -144,6 +147,14 @@ export class AppComponent {
         }
       });
     });
+
+    // Subscribe to router events to clear search on navigation
+    this.router.events.pipe(
+      takeUntil(this.destroy$),
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.clearSearch();
+    });
   }
 
   onSearchInput(event: Event) {
@@ -151,10 +162,22 @@ export class AppComponent {
     this.searchSubject.next(query);
   }
   onClick(type: string, id: number) {
-    this.router.navigate([`/${type}-page/${id}`]);
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+      this.router.navigate([`/${type}-page/${id}`]);
+    });
   }
   //planets-page/:id
   contentHeight: string = '0px';
+
+  clearSearch() {
+    this.searchResults = [];
+    this.isLoading = false;
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
 
   toggleSection(sectionId: string) {
     const section = this.sections.find(section => section.id === sectionId);
@@ -188,7 +211,6 @@ export class AppComponent {
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
       this.router.navigate([page.route]);
     });
-    
     if (window.innerWidth < 768) {
       this.toggleSidebar();
     }
