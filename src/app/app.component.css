@@ -41,7 +41,6 @@ img {
   height: 1.9em;
 }
 
-
 .navbar h3 a::before {
   content: '';
   position: absolute;
@@ -52,7 +51,7 @@ img {
   background-color: rgba(83, 61, 163, 0.452);
   transform: scaleY(0);
   transform-origin: bottom;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.1s ease-in-out;
   z-index: -1;
 }
 
@@ -73,7 +72,6 @@ img {
   position: relative;
   transition: background-color 0.3s, box-shadow 0.3s;
 }
-
 
 .navbar h3 a:hover::after,
 .navbar h3 a.active::after {
