@@ -99,4 +99,58 @@
   opacity: 0.3;
 }
 
+.fact-container {
+  position: fixed;
+  bottom: 20px;   
+  right: 20px;
+  width: 300px;
+  z-index: 1000;
+}
 
+.fact-content {
+  background: linear-gradient(45deg, rgba(23, 18, 40, 0.95), rgba(33, 28, 50, 0.95));
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fact-content h3 {
+  color: #fff;
+  margin: 0 0 15px 0;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.fact-content p {
+  color: #e0e0e0;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.refresh-button {
+  background: linear-gradient(45deg, #2196f3, #673ab7);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+}
+
+.refresh-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.refresh-button span {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.refresh-button:hover span {
+  transform: rotate(180deg);
+}

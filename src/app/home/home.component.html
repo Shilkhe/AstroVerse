@@ -6,6 +6,15 @@
 </div>
 
 <section class="content">
+    <div class="fact-container">
+        <div class="fact-content">
+            <h3>Did You Know?</h3>
+            <p>{{ currentFact.text }}</p>
+            <button (click)="loadNewFact()" class="refresh-button">
+                <span>↻</span> New Fact
+            </button>
+        </div>
+    </div>
     <div class="wiki-home">
         <h1>AstroVerse Official Wiki</h1>
         <hr>
