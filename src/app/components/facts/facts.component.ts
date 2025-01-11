@@ -6,7 +6,7 @@ import { FactDetails } from '../../model/facts/fact-details';
   imports: [],
   templateUrl: './facts.component.html',
   styleUrl: './facts.component.css',
-  encapsulation: ViewEncapsulation.None
+  
 })
 export class FactsComponent {
   @Input({

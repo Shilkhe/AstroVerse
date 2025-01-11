@@ -1,26 +1,102 @@
-.search-bar {
-  padding: 10px;
-  background-color: #f8f9fa;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.page-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.sticky {
-  position: sticky;
+.wiki-home {
+  position: relative;
+  width: clamp(300px, 90%, 1500px);
+  background: rgb(23, 18, 40);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  padding: clamp(15px, 2vw, 20px);
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(5px);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              margin 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: clamp(10px, 2vh, 20px) auto;
+  flex: 1;
+  margin-top: -64px;
+  padding: 40px;
+  padding-top: 20px;
+}
+
+.content {
+  padding: clamp(20px, 4vw, 40px);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
   top: 0;
+  height: 100vh;
+  width: 250px;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
 }
-
-.container {
-  display: flex;
-  padding: 10px;
-  justify-content: center;
+.sidebar-open .sidebar {
+  transform: translateX(0);
 }
 
-button {
-  padding: 10px;
-  margin: 10px;
+.sidebar-open .wiki-home {
+  width: calc(90% - 250px);
+  margin-left: 250px; 
 }
+
+
+@media screen and (max-width: 1024px) {
+  .sidebar-open .wiki-home {
+    width: calc(95% - 250px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 200px; 
+}
+
+.sidebar-open .wiki-home {
+  width: calc(98% - 200px);
+  margin-left: 200px;
+}
+}
+
+.wiki-home h1{
+  font-size: 40px;
+}
+
+.wiki-home h2 {
+  font-size: 30px;
+}
+
+.wiki-home p {
+  font-size: 18px;
+  margin-top: 1px;
+}
+
+.wiki-home hr {
+  border: none;
+  border-top: 1px solid #ffffff;
+  margin: 20px 0;
+  margin-top: -29px;
+  opacity: 0.3;
+}
+
+#hrh2 {
+  border: none;
+  border-top: 1px solid #ffffff;
+  margin: 20px 0;
+  margin-top: -16px;
+  opacity: 0.3;
+}
+
+

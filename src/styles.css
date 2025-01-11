@@ -6,11 +6,274 @@
     font-family: Erode-italics;
     src: url(../fonts/Erode-VariableItalic.ttf);
 }
-html{
+html, body{
     font-family: Erode;
     background-color:#0a0813;
     margin-top: 115px;
+    height: 100%;
+    color: #dadada;
 }
 a{
     font-family: Erode;
 }
+
+body { 
+    margin: 0;
+    padding: 60px;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    margin-top: -1.5rem;
+    height: calc(100svh - 15rem);
+    width: 300px;
+    border-top: 1px solid rgb(40, 31, 78);
+    border-right: 1px solid rgb(40, 31, 78);
+    border-bottom: 1px solid rgb(40, 31, 78);
+    border-radius: 0 24px 24px 0;
+    z-index: 200;
+    background: radial-gradient(ellipse at right,rgba(41, 30, 65, 0.452), transparent 200%),
+                radial-gradient(ellipse at left, rgba(41, 30, 65, 0.452), transparent 200%);
+    box-shadow: 0 0px 30px var(--box);
+    transition: all 0.3s ease-in-out;
+    padding-bottom: 2rem;
+    scrollbar-width: none;
+    color: #dadada;
+}
+
+.sidebar-folder {
+    z-index: 30;
+    content: '';
+    position: absolute;
+    right: -41px;
+    top: calc(50% - 2rem);
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40%;
+    min-height: 6rem;
+    background: inherit;
+    border-radius: 0 40px 40px 0;
+    border-right: 1px;
+    border-top: 1px;
+    border-bottom: 1px ;
+    box-shadow: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgb(40, 31, 78);
+    border-top: 1px solid rgb(40, 31, 78);
+    border-bottom: 1px rgb(40, 31, 78);
+
+
+    @media screen and (max-width: 768px) {
+        top: 50%;
+        right: -31px;
+        width: 30px;
+        height: 50%;
+    }
+}
+
+.sidebar-folder p {
+    font-family: 'Erode', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color:solid #dadada ;
+    text-align: center;
+    transform: rotateZ(90deg);
+    transition: all 0.1s ease;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.2rem;
+
+    }
+}
+
+.sidebar-folder:hover {
+    border-right: 1px solid rgb(74, 53, 148);
+    border-top: 1px solid rgb(74, 53, 148);
+    border-bottom: 1px rgb(74, 53, 148);
+    cursor: pointer;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+.sidebar .toggle-button {
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    background-color: var(--wiki-text);
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    width: 3rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.sidebar .toggle-button svg {
+    fill: #dadada;
+}
+
+.sidebar .collapsed .section-title,
+.sidebar .collapsed .page-list {
+    display: none;
+}
+
+h5 {
+    padding-bottom: 4px;
+    padding-left: 8px;
+    font-size: 1.2rem;
+    font-family: var(--font-wiki), sans-serif;
+    color: var(--current-color);
+    font-weight: 400;
+}
+
+.button {
+    font-size: 1.2rem;
+    font-family: 'Erode', serif;
+    font-weight: 500;
+}
+
+.section-title,
+.section-button {
+    border-bottom: 1px solid rgb(40, 31, 78);
+    /* cursor: pointer; */
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: 'Erode', serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.section-title {
+    border-right: 1px rgb(74, 53, 148);
+    color: var(--current-color);
+}
+
+.section-title:hover {
+    border-bottom: 1px solid rgb(74, 53, 148);
+}
+
+.section-title-selected {
+    border-bottom: 1px solid rgb(74, 53, 148) !important;
+}
+
+.section-title-selected:hover {
+    border-bottom: 1px solid rgb(74, 53, 148) !important;
+}
+
+.page-list {
+    /* padding: 16px; */
+    display: flex;
+    flex-direction: column;
+    /* display: none; */
+    height: 0;
+    transition: all 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: var(--current-color);
+    font-weight: 300;
+    font-family: var(--font-wiki), sans-serif;
+}
+
+.page {
+    cursor: pointer;
+    width: fit-content;
+    padding: 8px;
+    margin-left: 48px;
+    height: 40px;
+    font-family: 'Erode', serif;
+    color: #dadada;
+    transition: all 0.2s ease;
+}
+
+.page:hover {
+    color: rgb(124, 103, 198);
+    transform: translateX(8px);
+}
+
+.settings {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 2rem;
+    border-top: 1px solid var(--border);
+    gap: 16px;
+}
+
+.version {
+    display: block;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 5;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 9999px;
+    background-color: var(--current-color);
+    color: var(--inverted-color);
+    border: none;
+}
+
+.container-check {
+    --color: var(--current-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* user-select: none; */
+    fill: var(--color);
+    width: 24px;
+    transition: all 0.5s ease;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+}
+
+.section-name {
+    color: #dadada;
+    font-family: 'Erode', serif;
+    font-size: 1.2rem;
+}
+
+.section-name:hover{
+    cursor: pointer;
+}
+
+.container-check {
+    --color: #dadada;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    fill: var(--color);
+    width: 24px;
+    transition: all 0.5s ease;
+}
+
+.chevron-right {
+    fill: #dadada;
+}
+

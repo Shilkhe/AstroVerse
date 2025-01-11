@@ -1,7 +1,7 @@
 <div>
-  <label for="category-select">Filtra per categoria:</label>
+  <label for="category-select">Filter by category:</label>
   <select id="category-select" (change)="onCategoryChange($event)">
-    <option value="">Tutte</option>
+    <option value="">All</option>
     <option *ngFor="let category of categories" [value]="category">
       {{ category }}
     </option>
@@ -15,11 +15,11 @@
     </div>
   </div>
 } @else {
-  <p>Nessun dato disponibile.</p>
+  <p>No data Available</p>
 }
 
 <div class="pagination-controls">
-  <button (click)="prevPage()" [disabled]="page === 0">Pagina Precedente</button>
-  <span> Pagina {{ page + 1 }} di {{ totalPages }} </span>
-  <button (click)="nextPage()" [disabled]="page >= totalPages - 1">Pagina Successiva</button>
+  <button (click)="prevPage()" [disabled]="page === 0">Previews Page</button>
+  <span> Page {{ page + 1 }} of {{ totalPages }} </span>
+  <button (click)="nextPage()" [disabled]="page >= totalPages - 1">Next Page</button>
 </div>

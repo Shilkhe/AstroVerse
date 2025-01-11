@@ -1,79 +1,47 @@
-body {
-  background: radial-gradient(circle at center, #000428, #0a0813);
-  color: #ffffff;
-  font-family: 'Orbitron', sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: url('https://www.transparenttextures.com/patterns/stardust.png');
-  background-size: cover;
-  opacity: 0.2;
-  animation: move-bg 20s linear infinite;
-  z-index: -1;
-}
-@keyframes move-bg {
-  0% {
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    transform: translate(50%, 50%);
-  }
-}
-#moon {
-  position: relative;
-  background: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-  padding: 20px;
-  border-radius: 15px;
-  width: 350px;
-  height: 500px;
-  overflow: hidden;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 20px;
-  backdrop-filter: blur(5px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-}
-#moon:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
-}
-dl {
-  margin: 0;
-  padding: 0;
-}
-dt {
-  font-weight: bold;
-  color: #00d4ff;
-  margin-top: 10px;
-}
-dd {
-  margin: 0 0 10px 15px;
-  color: #ffffff;
-}
-dd span {
-  font-weight: bold;
-  color: #ffcc00;
-}
+/* Styles for the moon information component */
 .moon-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
   padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin: 20px 0;
+  width: clamp(300px, 90%, 1500px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
-html, body {
-  overflow: auto;
+
+.moon-info {
+  color: #ffffff;
+}
+
+.moon-info dl {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 15px;
+  margin: 0;
+}
+
+.moon-info dt {
+  font-weight: bold;
+  color: #a8a8ff;
+}
+
+.moon-info dd {
+  margin: 0;
+  padding: 0;
+}
+
+.moon-info span {
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .moon-info dl {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .moon-info dt {
+    margin-top: 15px;
+  }
 }

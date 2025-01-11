@@ -7,6 +7,8 @@
 } @else {
   <p>Nessun dato disponibile.</p>
 }
+<div class="pagination-controls">
 <button (click)="prevPage()" [disabled]="page === 0">Pagina Precedente</button>
 <span> Pagina {{ page + 1 }} di {{ totalPages }} </span>
 <button (click)="nextPage()" [disabled]="page >= totalPages - 1">Pagina Successiva</button>
+</div>

@@ -1,30 +1,78 @@
 <nav class="navbar">
   <h1 class="title">
-    <a routerLink="/" class="wiki-button">
+    <a routerLink="/" class="wiki-button" [class.active]="activeLink === 'home'" (click)="setActiveLink('home')">
       <img src="assets/Astroverse.png" alt="AstroVerse" class="title-image">
     </a>
   </h1>
   <h3 class="view">
-    <a routerLink="/">View</a>
+    <a routerLink="/view" [class.active]="activeLink === 'view'" (click)="setActiveLink('view')"><strong>View</strong></a>
   </h3>
   <h3 class="facts">
-    <a routerLink="/facts">Facts</a>
+    <a routerLink="/facts" [class.active]="activeLink === 'facts'" (click)="setActiveLink('facts')"><strong>Facts</strong></a>
   </h3>
   <h3 class="quiz">
-    <a routerLink="/quiz">Quiz</a>
+    <a routerLink="/quiz" [class.active]="activeLink === 'quiz'" (click)="setActiveLink('quiz')"><strong>Quiz</strong></a>
   </h3>
   <h3 class="aboutus">
-    <a routerLink="/members">About us</a>
+    <a routerLink="/members" [class.active]="activeLink === 'aboutus'" (click)="setActiveLink('aboutus')"><strong>About us</strong></a>
   </h3>
   <div class="section section-hover section-double">
-    <div class="input-container"><input _ngcontent-ng-c2420471674="" type="text" name="text"
-        placeholder="Search..." class="input ng-pristine ng-valid ng-touched"></div>
+    <div class="input-container">
+      <input type="text" name="text" placeholder="Search..." class="input" (input)="onSearchInput($event)">
+    </div>
+    <!-- Loading indicator -->
+    <div *ngIf="isLoading" class="loading">
+      Searching...
+    </div>
+
+    <!-- Results -->
+    <div class="results-container" *ngIf="searchResults.length > 0">
+      <div class="result-item" *ngFor="let result of searchResults">
+        <div class="result-name" (click)="onClick(result.type, result.id)"> <h1>{{result.name}}</h1></div>
+        <div class="result-type">{{result.type}}</div>
+      </div>
+    </div>
   </div>
 </nav>
 
-<li><a routerLink="/planets">Planets</a></li>
-<li><a routerLink="/moons">Moons</a></li>
-<li><a routerLink="/stars">Stars</a></li>
-<li><a routerLink="/missions">Missions</a></li>
-<li><a routerLink="/spacecrafts">Spacecrafts</a></li>
-<router-outlet></router-outlet>
+<div class="app-container">
+  <div class="sidebar" [class.collapsed]="isCollapsed">
+    <div class="sidebar-folder" (click)="toggleSidebar()">
+      <p>Sections</p>
+    </div>
+
+    <div style="overflow-y: scroll; scrollbar-width: none; height: 100%;">
+      <div *ngFor="let section of sections">
+        <div [ngClass]="isExpanded(section.id) ? 'section-title-selected' : ''" 
+             (click)="toggleSection(section.id)"
+             class="section-title">
+          <div class="section-header">
+            <label class="container-check" [style.rotate]="isExpanded(section.id) ? '90deg' : '0deg'">
+              <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="chevron-right">
+                <path fill="#f2f2f2"
+                  d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z">
+                </path>
+              </svg>
+            </label>
+            <span class="section-name">{{ section.name }}</span>
+          </div>
+          <div #pageList 
+               data-id="{{ section.id }}" 
+               class="page-list"
+               [style.height]="isExpanded(section.id) ? contentHeight : '0'"
+               [style.overflow]="isExpanded(section.id) ? 'visible' : 'hidden'">
+            <div class="page" 
+                 *ngFor="let page of section.pages" 
+                 (click)="navigateToPage(page, $event)">
+              {{ page.title }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content" [class.sidebar-collapsed]="isCollapsed">
+    <router-outlet></router-outlet>
+  </div>
+</div>
