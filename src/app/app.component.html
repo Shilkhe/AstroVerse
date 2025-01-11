@@ -16,19 +16,27 @@
   <h3 class="aboutus">
     <a routerLink="/members" [class.active]="activeLink === 'aboutus'" (click)="setActiveLink('aboutus')"><strong>About us</strong></a>
   </h3>
-  <div class="section section-hover section-double">
+  <div class="section section-hover section-double" (click)="$event.stopPropagation()">
     <div class="input-container">
-      <input type="text" name="text" placeholder="Search..." class="input" (input)="onSearchInput($event)">
+      <input type="text" 
+             name="text" 
+             placeholder="Search..." 
+             class="input" 
+             (input)="onSearchInput($event)"
+             (focus)="showSearchContainer()">
     </div>
+    
     <!-- Loading indicator -->
-    <div *ngIf="isLoading" class="loading">
+    <div *ngIf="isLoading && searchContainerVisible" class="loading">
       Searching...
     </div>
-
+  
     <!-- Results -->
-    <div class="results-container" *ngIf="searchResults.length > 0">
+    <div class="results-container" *ngIf="searchResults.length > 0 && searchContainerVisible">
       <div class="result-item" *ngFor="let result of searchResults">
-        <div class="result-name" (click)="onClick(result.type, result.id)"> <h1>{{result.name}}</h1></div>
+        <div class="result-name" (click)="onClick(result.type, result.id)">
+          <h1>{{result.name}}</h1>
+        </div>
         <div class="result-type">{{result.type}}</div>
       </div>
     </div>
