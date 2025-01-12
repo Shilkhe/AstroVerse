@@ -9,6 +9,7 @@
 html, body{
     font-family: Erode;
     background-color:#0a0813;
+
     margin-top: 115px;
     height: 100%;
     color: #dadada;
@@ -25,8 +26,9 @@ body {
 .sidebar {
     position: fixed;
     left: 0;
-    margin-top: -1.5rem;
-    height: calc(100svh - 15rem);
+    top: calc(175px - 1.5rem);
+        /* Fixed position from top based on your margin-top */
+        height: calc(100svh - 15rem);
     width: 300px;
     border-top: 1px solid rgb(40, 31, 78);
     border-right: 1px solid rgb(40, 31, 78);
