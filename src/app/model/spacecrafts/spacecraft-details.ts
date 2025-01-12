@@ -6,5 +6,5 @@ export interface SpacecraftDetails{
     launchVehicle:string;
     missionId:number;
     description:string;
-    image:string;
+    imageUrl:string;
 }

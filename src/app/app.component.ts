@@ -15,7 +15,7 @@ import { SectionService } from './model/sidebar/sidebar-service';
 })
 
 export class AppComponent implements OnDestroy{
-
+  searchContainerVisible: boolean = false;
   searchResults: SearchDetails[] = [];
   private searchSubject = new Subject<string>();
   private searchSubscription?: Subscription;
@@ -152,8 +152,12 @@ export class AppComponent implements OnDestroy{
     this.sectionService.toggleSidebar();
     this.isCollapsed = this.sectionService.getSidebarState();
   }
+  private boundHideSearchContainer: any;
 
   async ngOnInit() {
+
+    this.boundHideSearchContainer = this.hideSearchContainer.bind(this);
+    document.addEventListener('click', this.boundHideSearchContainer);
 
     this.isCollapsed = this.sectionService.getSidebarState();
     // Abbonati ai cambiamenti di stato
@@ -170,7 +174,7 @@ export class AppComponent implements OnDestroy{
     ).subscribe(query => {
       this.isLoading = true;
       const encodedQuery = query.replace(/\s/g, '%20');
-      this.searchService.getSearchDetails(query).subscribe({
+      this.searchService.getSearchDetails(encodedQuery).subscribe({
         next: (results: SearchDetails[]) => {
           this.searchResults = results;
           this.isLoading = false;
@@ -202,7 +206,24 @@ export class AppComponent implements OnDestroy{
   }
   //planets-page/:id
   contentHeight: string = '0px';
+  // Add these methods in your AppComponent class
+showSearchContainer() {
+  this.searchContainerVisible = true;
+}
 
+hideSearchContainer(event: MouseEvent) {
+  const searchArea = document.querySelector('.section-double');
+  const inputElement = document.querySelector('.input');
+  
+  // Check if click is outside both the search area and input
+  if (searchArea && 
+      inputElement && 
+      !searchArea.contains(event.target as Node) && 
+      !inputElement.contains(event.target as Node)) {
+    this.searchContainerVisible = false;
+    this.clearSearch();
+  }
+}
   clearSearch() {
     this.searchResults = [];
     this.isLoading = false;
@@ -211,6 +232,10 @@ export class AppComponent implements OnDestroy{
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
+    document.removeEventListener('click', this.boundHideSearchContainer);
+    if (this.sidebarSubscription) {
+      this.sidebarSubscription.unsubscribe();
+    }
   }
 
   toggleSection(sectionId: string) {

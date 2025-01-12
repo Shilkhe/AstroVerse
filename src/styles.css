@@ -23,6 +23,96 @@ body {
     padding: 60px;
 }
 
+.background-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.background-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.background-layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200vw;
+    height: 200vh; /* Increased height for rotation */
+    background-image: url(./assets/night-sky-background.png);
+    background-repeat: repeat;
+    opacity: 0.5; /* Reduced individual layer opacity */
+    transform-origin: center center;
+}
+
+/* Multiple layers with different animations */
+.layer-1 {
+    animation: moveBackground1 180s linear infinite;
+}
+
+.layer-2 {
+    animation: moveBackground2 150s linear infinite;
+}
+
+.layer-3 {
+    animation: moveBackground3 200s linear infinite;
+}
+
+.spherical-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        rgba(0, 0, 0, 0.2) 50%,
+        rgba(0, 0, 0, 0.5) 80%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes moveBackground1 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateX(-50%) rotate(360deg);
+    }
+}
+
+@keyframes moveBackground2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(120deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateX(-50%) rotate(-240deg);
+    }
+}
+
+@keyframes moveBackground3 {
+    0% {
+        transform: translate(-50%, -50%) rotate(-60deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateX(-50%) rotate(300deg);
+    }
+}
+  
 .sidebar {
     position: fixed;
     left: 0;
