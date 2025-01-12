@@ -5,10 +5,14 @@
     </a>
   </h1>
   <h3 class="view">
-    <a routerLink="/view" [class.active]="activeLink === 'view'" (click)="setActiveLink('view')"><strong>View</strong></a>
+    <a href="#" [class.active]="activeLink === 'view'" (click)="handleViewClick($event)">
+      <strong>View</strong>
+    </a>
   </h3>
   <h3 class="facts">
-    <a routerLink="/facts" [class.active]="activeLink === 'facts'" (click)="setActiveLink('facts')"><strong>Facts</strong></a>
+    <a routerLink="/facts" [class.active]="activeLink === 'facts'" (click)="setActiveLink('facts')">
+      <strong>Facts</strong>
+    </a>
   </h3>
   <h3 class="quiz">
     <a routerLink="/quiz" [class.active]="activeLink === 'quiz'" (click)="setActiveLink('quiz')"><strong>Quiz</strong></a>

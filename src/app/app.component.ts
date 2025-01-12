@@ -23,6 +23,7 @@ export class AppComponent implements OnDestroy{
   title = 'AstroVerse';
   activeLink: string = ''; // Variable to hold the active link
   authService: any;
+  lastViewedPage: string | null = null;
 
   setActiveLink(link:string):void {
     this.activeLink=link;
@@ -106,13 +107,41 @@ export class AppComponent implements OnDestroy{
 
   @ViewChildren('pageList') pageLists!: QueryList<ElementRef>;
 
-  constructor(private router: Router, private route: ActivatedRoute, private sectionService: SectionService, private searchService: SearchService) {
-    this.router.events.subscribe(event => {
+  constructor(private router: Router,
+    private route: ActivatedRoute,
+    private sectionService: SectionService,
+    private searchService: SearchService
+  ) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        window.scrollTo(0, 0);
+        // Store the last viewed page if it's a viewable page
+        if (this.isViewablePage(event.url)) {
+          this.lastViewedPage = event.url;
+        }
       }
+      window.scrollTo(0, 0);
     });
   }
+
+  private isViewablePage(url: string): boolean {
+    // Check if the current URL matches any of the pages in our sections
+    return this.sections.some(section =>
+      section.pages.some(page => page.route === url)
+    );
+  }
+
+  handleViewClick(event: MouseEvent): void {
+    event.preventDefault();
+    if (this.lastViewedPage) {
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate([this.lastViewedPage]);
+      });
+      this.setActiveLink('view');
+    }
+  }
+
 
   toggleSidebar() {
     if (document.getElementsByClassName('no-animation').length > 0) {
