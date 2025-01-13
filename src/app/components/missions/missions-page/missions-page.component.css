@@ -109,8 +109,7 @@
     border-radius: 8px;
     overflow: hidden;
     background: rgba(0, 0, 0, 0.2);
-    border: 2px solid #a8a8ff;
-    box-shadow: 0 0 10px rgba(168, 168, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     float: right;
     margin-left: 20px;
     margin-top: 0px;
