@@ -5,6 +5,13 @@
         <hr>
         <p>{{ spacecrafts.description }}</p>
         <h2>Spacecraft Data and Launch Information</h2>
+        <div class="spacecraft-image-container">
+          @if(spacecrafts.imageUrl) {
+            <img [src]="spacecrafts.imageUrl" [alt]="spacecrafts.name + ' image'" class="spacecraft-image"/>
+          } @else {
+            <div class="placeholder-image">No image available</div>
+          }
+        </div>
         <hr id="hrh2">
         <p><strong>Type: </strong> {{ spacecrafts.type }}</p>
         <p><strong>Manufacturer: </strong> {{ spacecrafts.manufacturer }}</p>

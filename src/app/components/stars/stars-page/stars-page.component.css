@@ -103,3 +103,21 @@
     width: 100%;
     height: 500px;
 }
+.star-image-container {
+    width: 350px;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px solid #a8a8ff;
+    box-shadow: 0 0 10px rgba(168, 168, 255, 0.3);
+    float: right;
+    margin-left: 20px;
+    margin-top: 0px;
+  }
+  
+  .star-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

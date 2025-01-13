@@ -5,6 +5,13 @@
       <hr>
       <p>{{ moon.description }}</p>
       <h2>Astronomical Data and Discovery</h2>
+      <div class="moon-image-container">
+        @if(moon.imageUrl) {
+          <img [src]="moon.imageUrl" [alt]="moon.name + ' image'" class="moon-image"/>
+        } @else {
+          <div class="placeholder-image">No image available</div>
+        }
+      </div>
       <hr id="hrh2">
       <p><strong>Mass:</strong> {{ moon.radius }} km</p>
       <p><strong>Radius:</strong> {{ moon.radius }} AU</p>

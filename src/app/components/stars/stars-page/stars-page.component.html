@@ -5,6 +5,13 @@
       <hr>
       <p>{{ star.description }}</p>
       <h2>Astronomical Data and Discovery</h2>
+      <div class="star-image-container">
+        @if(star.imageUrl) {
+          <img [src]="star.imageUrl" [alt]="star.name + ' image'" class="star-image"/>
+        } @else {
+          <div class="placeholder-image">No image available</div>
+        }
+      </div>
       <hr id="hrh2">
       <p><strong>Mass:</strong> {{ star.mass }} kg</p>
       <p><strong>Radius:</strong> {{ star.radius }} km</p>
