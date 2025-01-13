@@ -8,11 +8,13 @@
 }
 html, body{
     font-family: Erode;
-    background-color:#0a0813;
-
     margin-top: 115px;
     height: 100%;
     color: #dadada;
+    z-index: 1;
+}
+html{
+    background-color: rgb(10, 10, 10);
 }
 a{
     font-family: Erode;
@@ -31,6 +33,7 @@ body {
     height: 100vh;
     overflow: hidden;
     perspective: 1000px;
+    z-index: -1000;
 }
 
 .background-wrapper {
@@ -51,8 +54,9 @@ body {
     height: 200vh; /* Increased height for rotation */
     background-image: url(./assets/night-sky-background.png);
     background-repeat: repeat;
-    opacity: 0.5; /* Reduced individual layer opacity */
+    opacity: 0.7; /* Reduced individual layer opacity */
     transform-origin: center center;
+    z-index: -1000;
 }
 
 /* Multiple layers with different animations */
@@ -83,7 +87,7 @@ body {
     );
     mix-blend-mode: multiply;
     pointer-events: none;
-    z-index: 1;
+    z-index: -1000;
 }
 
 @keyframes moveBackground1 {
