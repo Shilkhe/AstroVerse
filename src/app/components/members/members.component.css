@@ -30,7 +30,6 @@
   background: rgba(35, 28, 60, 0.9);
 }
 
-/* Image styles */
 #divPrincipale img {
   width: 150px;
   height: 150px;
@@ -38,6 +37,8 @@
   margin-bottom: 15px;
   border: 3px solid rgba(74, 53, 148, 0.3);
   transition: all 0.3s ease;
+  object-fit: cover; 
+  object-position: 50% 30%;
 }
 
 #divPrincipale > div:hover img {
@@ -84,7 +85,7 @@
 
   #divPrincipale img {
     width: 120px;
-    height: 120px;
+    height: auto;
   }
 
   #divPrincipale h1 {
