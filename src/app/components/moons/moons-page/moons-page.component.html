@@ -3,6 +3,9 @@
     <div *ngIf="moon;else errorTemplate" class="moon-details">
       <h1>{{ moon.name }}</h1>
       <hr>
+      <p>{{ moon.description }}</p>
+      <h2>Astronomical Data and Discovery</h2>
+      <hr id="hrh2">
       <p><strong>Mass:</strong> {{ moon.radius }} km</p>
       <p><strong>Radius:</strong> {{ moon.radius }} AU</p>
       <p><strong>Planet Distance:</strong> {{ moon.planetDistance }} days</p>
@@ -11,10 +14,9 @@
       <p><strong>Discovered By:</strong> {{ moon.discoveredBy }}</p>
       <p><strong>Atmosphere</strong> {{ moon.atmosphere ? 'Yes' : 'No' }}</p>
       <p><strong>ID Planet:</strong> {{ moon.planetId }}</p>
-      <p><strong>Description:</strong> {{ moon.description }}</p>
-      <p><strong>Interactive Map:</strong> </p>
+      <h2>Interactive view</h2>
+      <hr id="hrh2">
     </div>
-    
     <figure>
       <span>
         <iframe *ngIf="iframeUrl" [src]="iframeUrl" title="Solar System" class="smd-iframe-iframe border-0"

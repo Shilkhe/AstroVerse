@@ -3,13 +3,16 @@
     <div *ngIf="star; else errorTemplate" class="star-details">
       <h1>{{ star.name }}</h1>
       <hr>
+      <p>{{ star.description }}</p>
+      <h2>Astronomical Data and Discovery</h2>
+      <hr id="hrh2">
       <p><strong>Mass:</strong> {{ star.mass }} kg</p>
       <p><strong>Radius:</strong> {{ star.radius }} km</p>
       <p><strong>Spectral Type:</strong> {{ star.spectralType }}</p>
       <p><strong>Luminosity:</strong> {{ star.luminosity }}</p>
       <p><strong>Temperature:</strong> {{ star.temperature }}</p>
-      <p><strong>Description:</strong> {{ star.description }}</p>
-      <p><strong>Interactive Map:</strong> </p>
+      <h2>Interactive view</h2>
+      <hr id="hrh2">
     </div>
     <figure>
       <span>

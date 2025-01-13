@@ -3,11 +3,14 @@
       <div *ngIf="spacecrafts; else errorTemplate" class="planet-details">
         <h1>{{ spacecrafts.name }}</h1>
         <hr>
-        <p><strong>Type:</strong> {{ spacecrafts.type }}</p>
-        <p><strong>Manufacturer:</strong> {{ spacecrafts.manufacturer }}</p>
-        <p><strong>Launch Date:</strong> {{ spacecrafts.launchVehicle }}</p>
-        <p><strong>Description:</strong> {{ spacecrafts.description }}</p>
-        <p><strong>Interactive Map:</strong> </p>
+        <p>{{ spacecrafts.description }}</p>
+        <h2>Spacecraft Data and Launch Information</h2>
+        <hr id="hrh2">
+        <p><strong>Type: </strong> {{ spacecrafts.type }}</p>
+        <p><strong>Manufacturer: </strong> {{ spacecrafts.manufacturer }}</p>
+        <p><strong>Launch vehicle: </strong> {{ spacecrafts.launchVehicle }}</p>
+        <h2>Interactive view</h2>
+        <hr id="hrh2">
       </div>
       <figure>
         <span>
