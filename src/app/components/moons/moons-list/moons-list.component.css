@@ -2,9 +2,11 @@
 :host {
   display: block;
   padding: 20px;
-  width: 100%;
-  max-width: 1200px;
+  /* width: 100%;
+  max-width: 1200px; */
   margin: 0 auto;
+  margin-top: -45px;
+  width: clamp(300px, 90%, 1500px);
 }
 
 /* Filter section styles */
