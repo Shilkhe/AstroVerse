@@ -6,6 +6,19 @@
       <p>{{ planet.description }}</p>
       <h2>Astronomical Data and Discovery</h2>
       <hr id="hrh2">
+      <div class="planet-image-container">
+        @if(planet.imageUrl) {
+          <img 
+            [src]="planet.imageUrl" 
+            [alt]="planet.name + ' image'"
+            class="planet-image"
+          />
+        } @else {
+          <div class="placeholder-image">
+            No image available
+          </div>
+        }
+      </div>
       <p><strong>Mass:</strong> {{ planet.mass }} kg</p>
       <p><strong>Radius:</strong> {{ planet.radius }} km</p>
       <p><strong>Distance from Star:</strong> {{ planet.starDistance }} AU</p>
