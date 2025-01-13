@@ -1,6 +1,19 @@
 @if (mission) {
   <div class="mission-container">
     <article class="mission-info">
+      <div class="mission-image-container">
+        @if(mission.imageUrl) {
+          <img 
+            [src]="mission.imageUrl" 
+            [alt]="mission.name + ' image'"
+            class="mission-image"
+          />
+        } @else {
+          <div class="placeholder-image">
+            No image available
+          </div>
+        }
+      </div>
       <div id="mission" aria-label="Mission Information">
         <dl>
           <dt>Name:</dt>

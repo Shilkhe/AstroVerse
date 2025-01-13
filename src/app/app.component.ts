@@ -73,9 +73,12 @@ export class AppComponent implements OnDestroy{
       id: 'missions',
       name: 'Missions',
       pages: [
-        { id: 'apollo', title: 'Apollo Program', route: '/wiki/missions/apollo' },
-        { id: 'voyager', title: 'Voyager Program', route: '/wiki/missions/voyager' },
-        // Add more missions
+        { id: 'apollo', title: 'Apollo Program', route: '/missions-page/1' },
+        { id: 'voyager', title: 'Voyager Program', route: '/missions-page/3' },
+        { id: 'mars', title: 'Mars Odyssey Mission', route: '/missions-page/2' },
+        { id: 'curiosity', title: 'Curiosity Program', route: '/missions-page/6' },
+        { id: 'mariner-mission-1', title: 'James Webb Space', route: '/missions-page/10' },
+        { id: 'view-all-missions', title: 'View all...', route: '/missions' }
       ]
     },
     {

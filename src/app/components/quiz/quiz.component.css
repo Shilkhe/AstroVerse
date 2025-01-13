@@ -39,9 +39,15 @@ label {
 }
 
 select {
-  font-size: 1.5rem;
-  color: #000000;
-  background-color: rgba(255, 255, 255, 0.8);
+  background: rgba(23, 18, 40, 0.9);
+  color: #dadada;
+  border: 1px solid rgba(40, 31, 78, 0.3);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.3s ease;
+  margin-top: 2px;
 }
 
 .start-quiz-btn {
@@ -55,6 +61,7 @@ select {
   cursor: pointer;
   box-shadow: 0 0 25px #ffaa00, 0 0 50px #ff3300;
   transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 20px;
 }
 
 .start-quiz-btn:hover {
