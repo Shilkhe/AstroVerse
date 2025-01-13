@@ -3,8 +3,15 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url('https://miro.medium.com/v2/resize:fit:828/format:webp/1*vcDn-LBjj0IaD98XZaokJA.gif') no-repeat center center fixed;
+  background: 
+    radial-gradient(circle at center,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 15%,
+      rgba(0, 0, 0, 1) 85%
+    ),
+    url('https://miro.medium.com/v2/resize:fit:828/format:webp/1*vcDn-LBjj0IaD98XZaokJA.gif') no-repeat center center fixed;
   background-size: cover;
+  margin-top: -85px;
 }
 
 .quiz-home-container {
@@ -17,6 +24,7 @@
   margin: 50px;
   max-width: 90%;
   width: 750px;
+  margin-top: -10px;
 }
 
 h1 {
