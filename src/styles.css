@@ -129,8 +129,8 @@ body {
     border-bottom: 1px solid rgb(40, 31, 78);
     border-radius: 0 24px 24px 0;
     z-index: 200;
-    background: radial-gradient(ellipse at right,rgba(41, 30, 65, 0.452), transparent 200%),
-                radial-gradient(ellipse at left, rgba(41, 30, 65, 0.452), transparent 200%);
+    background: radial-gradient(ellipse at right,rgba(23, 18, 40, 0.925), transparent 180%),
+                radial-gradient(ellipse at left, rgba(23, 18, 40, 0.897), transparent 180%);
     box-shadow: 0 0px 30px var(--box);
     transition: all 0.3s ease-in-out;
     padding-bottom: 2rem;
