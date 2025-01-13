@@ -3,6 +3,13 @@
     <div *ngIf="mission; else errorTemplate" class="planet-details">
       <h1>{{ mission.name }}</h1>
       <hr>
+      <div class="mission-image-container">
+        @if(mission.imageUrl) {
+          <img [src]="mission.imageUrl" [alt]="mission.name + ' image'" class="mission-image"/>
+        } @else {
+          <div class="placeholder-image">No image available</div>
+        }
+      </div>
       <p><strong>Launch Date:</strong> {{ mission.launchDate }}</p>
       <p><strong>End Date:</strong> {{ mission.endDate }}</p>
       <p><strong>Target:</strong> {{ mission.target }}</p>

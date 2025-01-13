@@ -103,3 +103,53 @@
   width: 100%;
   height: 500px;
 }
+.planet-image-container,
+.moon-image-container,
+.star-image-container,
+.mission-image-container,
+.spacecraft-image-container {
+  width: 350px;
+  height: 350px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  /* border: 2px solid #a8a8ff; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  float: right;
+  margin-left: 20px;
+  margin-top: 6px;  /* Keeping the same position */
+}
+
+.planet-image,
+.moon-image,
+.star-image,
+.mission-image,
+.spacecraft-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a8a8ff;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .planet-image-container,
+  .moon-image-container,
+  .star-image-container,
+  .mission-image-container,
+  .spacecraft-image-container {
+    float: none;
+    margin: 20px auto;
+    width: 100%;
+    height: 300px;
+  }
+}

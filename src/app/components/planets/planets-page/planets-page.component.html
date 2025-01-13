@@ -3,6 +3,22 @@
     <div *ngIf="planet; else errorTemplate" class="planet-details">
       <h1>{{ planet.name }}</h1>
       <hr>
+      <p>{{ planet.description }}</p>
+      <h2>Astronomical Data and Discovery</h2>
+      <hr id="hrh2">
+      <div class="planet-image-container">
+        @if(planet.imageUrl) {
+          <img 
+            [src]="planet.imageUrl" 
+            [alt]="planet.name + ' image'"
+            class="planet-image"
+          />
+        } @else {
+          <div class="placeholder-image">
+            No image available
+          </div>
+        }
+      </div>
       <p><strong>Mass:</strong> {{ planet.mass }} kg</p>
       <p><strong>Radius:</strong> {{ planet.radius }} km</p>
       <p><strong>Distance from Star:</strong> {{ planet.starDistance }} AU</p>
@@ -11,10 +27,9 @@
       <p><strong>Discovered By:</strong> {{ planet.discoveredBy }}</p>
       <p><strong>Atmosphere:</strong> {{ planet.atmosphere }}</p>
       <p><strong>Has Ring System:</strong> {{ planet.hasRingSystem ? 'Yes' : 'No' }}</p>
-      <p><strong>Description:</strong> {{ planet.description }}</p>
-      <p><strong>Interactive Map:</strong> </p>
+      <h2>Interactive view</h2>
+      <hr id="hrh2">
     </div>
-    
     <figure>
       <span>
         <iframe *ngIf="iframeUrl" [src]="iframeUrl" title="Solar System" class="smd-iframe-iframe border-0"
