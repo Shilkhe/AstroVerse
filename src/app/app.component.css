@@ -173,67 +173,6 @@ router-outlet + * {
   width: 100%;
   transition: margin-left 0.3s ease;
 }
-/* Container for search results */
-.results-container {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  /* Aligned to the right instead of left: 0 */
-  width: 350px;
-  /* Fixed width for better control */
-  background: rgba(255, 255, 255, 0.95);
-  /* Slightly transparent background */
-  border: none;
-  border-radius: 12px;
-  margin-top: 8px;
-  max-height: 400px;
-  overflow-y: auto;
-  z-index: 1000;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(8px);
-  /* Frosted glass effect */
-  transform-origin: top right;
-  animation: slideIn 0.2s ease-out;
-
-  /* Custom scrollbar */
-  scrollbar-width: thin;
-  scrollbar-color: #888 transparent;
-}
-
-/* Sliding animation */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Individual result items */
-.results-container {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 350px;
-  background: rgba(103, 58, 183, 0.05);
-  /* Very light purple background */
-  border: none;
-  border-radius: 12px;
-  margin-top: 8px;
-  max-height: 400px;
-  overflow-y: auto;
-  z-index: 1000;
-  box-shadow: 0 8px 24px rgba(103, 58, 183, 0.15);
-  backdrop-filter: blur(8px);
-  transform-origin: top right;
-  animation: slideIn 0.2s ease-out;
-  scrollbar-width: thin;
-  scrollbar-color: #673ab7 transparent;
-}
 
 @keyframes slideIn {
   from {
@@ -247,111 +186,8 @@ router-outlet + * {
   }
 }
 
-.results-container {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 350px;
-  background: #4a148c;
-  /* Solid dark purple background */
-  border: none;
-  border-radius: 12px;
-  margin-top: 8px;
-  max-height: 400px;
-  overflow-y: auto;
-  z-index: 1000;
-  box-shadow: 0 8px 24px rgba(74, 20, 140, 0.3);
-  transform-origin: top right;
-  animation: slideIn 0.2s ease-out;
-  scrollbar-width: thin;
-  scrollbar-color: #7b1fa2 #4a148c;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.results-container {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 280px;
-  /* Reduced from 350px */
-  background: #4a148c;
-  border: none;
-  border-radius: 12px;
-  margin-top: 8px;
-  max-height: 400px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  /* Prevent horizontal scrolling */
-  z-index: 1000;
-  box-shadow: 0 8px 24px rgba(74, 20, 140, 0.3);
-  transform-origin: top right;
-  animation: slideIn 0.2s ease-out;
-  scrollbar-width: thin;
-  scrollbar-color: #7b1fa2 #4a148c;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.results-container {
-  position: absolute;
-  top: 100%;
-  right: 20px;
-  /* Added margin from right */
-  width: 280px;
-  background: #4a148c;
-  border: none;
-  border-radius: 12px;
-  margin-top: 8px;
-  max-height: 400px;
-  overflow-y: hidden;
-  /* Removed scrolling */
-  overflow-x: hidden;
-  z-index: 1000;
-  box-shadow: 0 8px 24px rgba(74, 20, 140, 0.3);
-  transform-origin: top right;
-  animation: slideIn 0.2s ease-out;
-  scrollbar-width: none;
-  /* Hides scrollbar for Firefox */
-  -ms-overflow-style: none;
-  /* Hides scrollbar for IE/Edge */
-}
-
-/* Hide scrollbar for Chrome/Safari/Opera */
 .results-container::-webkit-scrollbar {
   display: none;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
 }
 
 .results-container {
@@ -359,59 +195,49 @@ router-outlet + * {
   top: 100%;
   right: 20px;
   width: 280px;
-  background: #4a148c;
-  border: none;
-  border-radius: 12px;
-  margin-top: 8px;
-  max-height: 400px;
-  overflow-y: auto;
-  /* Changed back to auto to enable scrolling */
-  overflow-x: hidden;
-  z-index: 1000;
-  box-shadow: 0 8px 24px rgba(74, 20, 140, 0.3);
-  transform-origin: top right;
-  animation: slideIn 0.2s ease-out;
-  scrollbar-width: none;
-  /* Hides scrollbar for Firefox */
-  -ms-overflow-style: none;
-  /* Hides scrollbar for IE/Edge */
-}
-
-/* Hide scrollbar for Chrome/Safari/Opera */
-.results-container::-webkit-scrollbar {
-  display: none;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.results-container {
   background: #2e2459;
-  /* This is where you change the background color */
+  border: none;
+  border-radius: 12px;
+  margin-top: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(74, 20, 140, 0.3);
+  transform-origin: top right;
+  animation: slideIn 0.2s ease-out;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.results-container::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .results-container {
-
+  position: absolute;
   top: 100%;
   right: 32px;
   width: 280px;
   margin-top: -10px;
-  /* Changed from 8px to -8px to move it up */
-  
 }
+
 .result-item {
-margin-top: -20px;
+  margin-top: -20px;
   padding: 16px;
-  border-bottom: 1px solid rgb(125, 110, 177);
+  border-bottom: 1px solid rgb(40, 31, 78);
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
@@ -424,7 +250,6 @@ margin-top: -20px;
 }
 
 .result-item:hover {
-  /* background-color: #311a5c; */
   transform: translateX(2px);
 }
 
@@ -440,7 +265,7 @@ margin-top: -20px;
 .result-type {
   color: #dadada;
   font-size: 0.85rem;
-  margin-top: 2px;
+  margin-top: -20px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
