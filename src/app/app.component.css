@@ -173,25 +173,250 @@ router-outlet + * {
   width: 100%;
   transition: margin-left 0.3s ease;
 }
+/* Container for search results */
 .results-container {
   position: absolute;
   top: 100%;
-  left: 0;
   right: 0;
-  background: rgba(83, 61, 163, 0.452);
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-top: 4px;
+  /* Aligned to the right instead of left: 0 */
+  width: 350px;
+  /* Fixed width for better control */
+  background: rgba(255, 255, 255, 0.95);
+  /* Slightly transparent background */
+  border: none;
+  border-radius: 12px;
+  margin-top: 8px;
   max-height: 400px;
   overflow-y: auto;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(8px);
+  /* Frosted glass effect */
+  transform-origin: top right;
+  animation: slideIn 0.2s ease-out;
+
+  /* Custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
 }
 
+/* Sliding animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Individual result items */
+.results-container {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 350px;
+  background: rgba(103, 58, 183, 0.05);
+  /* Very light purple background */
+  border: none;
+  border-radius: 12px;
+  margin-top: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(103, 58, 183, 0.15);
+  backdrop-filter: blur(8px);
+  transform-origin: top right;
+  animation: slideIn 0.2s ease-out;
+  scrollbar-width: thin;
+  scrollbar-color: #673ab7 transparent;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.results-container {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 350px;
+  background: #4a148c;
+  /* Solid dark purple background */
+  border: none;
+  border-radius: 12px;
+  margin-top: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(74, 20, 140, 0.3);
+  transform-origin: top right;
+  animation: slideIn 0.2s ease-out;
+  scrollbar-width: thin;
+  scrollbar-color: #7b1fa2 #4a148c;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.results-container {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 280px;
+  /* Reduced from 350px */
+  background: #4a148c;
+  border: none;
+  border-radius: 12px;
+  margin-top: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(74, 20, 140, 0.3);
+  transform-origin: top right;
+  animation: slideIn 0.2s ease-out;
+  scrollbar-width: thin;
+  scrollbar-color: #7b1fa2 #4a148c;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.results-container {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  /* Added margin from right */
+  width: 280px;
+  background: #4a148c;
+  border: none;
+  border-radius: 12px;
+  margin-top: 8px;
+  max-height: 400px;
+  overflow-y: hidden;
+  /* Removed scrolling */
+  overflow-x: hidden;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(74, 20, 140, 0.3);
+  transform-origin: top right;
+  animation: slideIn 0.2s ease-out;
+  scrollbar-width: none;
+  /* Hides scrollbar for Firefox */
+  -ms-overflow-style: none;
+  /* Hides scrollbar for IE/Edge */
+}
+
+/* Hide scrollbar for Chrome/Safari/Opera */
+.results-container::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.results-container {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  width: 280px;
+  background: #4a148c;
+  border: none;
+  border-radius: 12px;
+  margin-top: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+  /* Changed back to auto to enable scrolling */
+  overflow-x: hidden;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(74, 20, 140, 0.3);
+  transform-origin: top right;
+  animation: slideIn 0.2s ease-out;
+  scrollbar-width: none;
+  /* Hides scrollbar for Firefox */
+  -ms-overflow-style: none;
+  /* Hides scrollbar for IE/Edge */
+}
+
+/* Hide scrollbar for Chrome/Safari/Opera */
+.results-container::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.results-container {
+  background: #2e2459;
+  /* This is where you change the background color */
+}
+
+.results-container {
+
+  top: 100%;
+  right: 32px;
+  width: 280px;
+  margin-top: -10px;
+  /* Changed from 8px to -8px to move it up */
+  
+}
 .result-item {
-  padding: 12px;
-  border-bottom: 1px solid #eee;
+margin-top: -20px;
+  padding: 16px;
+  border-bottom: 1px solid rgb(125, 110, 177);
   cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: -20px;
 }
 
 .result-item:last-child {
@@ -199,15 +424,29 @@ router-outlet + * {
 }
 
 .result-item:hover {
-  background-color: #f5f5f5;
+  /* background-color: #311a5c; */
+  transform: translateX(2px);
 }
 
 .result-name {
-  font-weight: bold;
+  font-weight: 500;
+  color: #dadada;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .result-type {
-  color: #666;
-  font-size: 0.9em;
-  margin-top: 4px;
+  color: #dadada;
+  font-size: 0.85rem;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.8;
+}
+
+.results-container:empty {
+  display: none;
 }
